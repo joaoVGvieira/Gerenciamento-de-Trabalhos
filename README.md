@@ -1,2 +1,2 @@
 # Gerenciamento-de-Trabalhos-Conclusao-do-curso
-Neste projeto será desenvolvido um software de gerenciamento de trabalhos de conclusão de curso. Será utilizada a liguagem de programação orientada a objetos java para a criação do software citado em questão. 
+Neste projeto será desenvolvido um software de gerenciamento de trabalhos de conclusão de curso. Será utilizada a liguagem de programação orientada a objetos java para a criação do software citado em questão. No software deverá ser possível a pesquisa através do nome dos autores, coautores, código do projeto, e outras características próprias de cada projeto em questão.
