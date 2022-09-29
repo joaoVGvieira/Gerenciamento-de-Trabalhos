@@ -21,7 +21,7 @@ public class GerenciamentoPOC {
         String test;
         System.out.println("Hello, World!");
         test=scan.nextLine();
-        System.out.println("---->>>>>>> we shall be victorious>>>>>>>"+test);
+        System.out.println("---->>>>>>> >>>>>>>"+test);
     }
 }
     
