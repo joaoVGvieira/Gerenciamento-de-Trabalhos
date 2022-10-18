@@ -9,6 +9,7 @@ package POC_view;
  * @author cleid
  */
 import java.util.Scanner;
+import POC_model.*;
 public class Menu {
     private int escolha;
     
@@ -22,7 +23,8 @@ public class Menu {
         choice=scan.nextInt();
         switch (choice) {
             case 1:
-                
+                Usuario user=new Usuario();
+                System.out.println("cadastro de aluno ou professor");
                 break;
             default:
                 throw new AssertionError();
