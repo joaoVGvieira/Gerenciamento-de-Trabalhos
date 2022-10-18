@@ -10,11 +10,17 @@ package POC_model;
  */
 public class Usuario {
     
-    
-    private Tipo usuario;
+
     private String nome;
-    private String matricula;
+    private int matricula;
     private String senha;
+
+    //Construtor
+    public Usuario(String nome, int matricula, String senha){
+        this.nome = nome;
+        this.matricula = matricula;
+        this.senha = senha;
+    }
   
     public void setnome(String nome){
         this.nome=nome;
