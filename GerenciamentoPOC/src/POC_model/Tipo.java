@@ -10,6 +10,6 @@ package POC_model;
  */
 public class Tipo {
     public enum tipo{
-        Professor, Aluno,administrador
+        Professor, Aluno,Administrador
     }
 }
