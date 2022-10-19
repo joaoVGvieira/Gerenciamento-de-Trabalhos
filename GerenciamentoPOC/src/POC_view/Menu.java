@@ -23,7 +23,7 @@ public class Menu {
         choice=scan.nextInt();
         switch (choice) {
             case 1:
-                Usuario user=new Usuario();
+                //Usuario user = new Usuario();
                 System.out.println("cadastro de aluno ou professor");
                 break;
             default:

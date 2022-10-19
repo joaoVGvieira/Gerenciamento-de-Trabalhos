@@ -34,7 +34,7 @@ public class Usuario {
         return this.nome;
     }
     
-    public String getmatricula(String nome){
+    public int getmatricula(String nome){
         return this.matricula;
     }
     
