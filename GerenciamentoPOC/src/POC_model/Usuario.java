@@ -2,8 +2,18 @@ package POC_model;
 public class Usuario {
     
 
+    
+    
+
+
+
     private String nome;
+
+    
+    private Tipo usuario;
+
     private int matricula;
+
     private String senha;
 
     //Construtor
