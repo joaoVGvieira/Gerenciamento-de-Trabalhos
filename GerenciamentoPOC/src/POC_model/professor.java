@@ -9,7 +9,7 @@ public class professor extends Usuario{
 
     public professor(String nome, int matricula, String senha, String email, String telefone, String endereco){
 
-        super(nome, matricula, senha);
+        //super(nome, matricula, senha);
 
         this.email = email;
         this.telefone = telefone;

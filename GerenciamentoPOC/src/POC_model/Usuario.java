@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package POC_model;
-
-/**
- *
- * @author cleid
- */
 public class Usuario {
     
 
@@ -16,7 +7,7 @@ public class Usuario {
     private String senha;
 
     //Construtor
-    public Usuario(String nome, int matricula, String senha){
+    public void usuario(String nome, int matricula, String senha){
         this.nome = nome;
         this.matricula = matricula;
         this.senha = senha;
@@ -26,8 +17,8 @@ public class Usuario {
         this.nome=nome;
     }
     
-    public void setmatricula(String nome){
-        this.nome=nome;
+    public void setmatricula(int matricula){
+        this.matricula=matricula;
     }
     
     public String getnome(String nome){
@@ -38,5 +29,4 @@ public class Usuario {
         return this.matricula;
     }
     
-
 }
