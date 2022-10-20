@@ -11,7 +11,10 @@ import POC_model.poc;
 
 public class poc_controller {
     
-    
+    public void poc_cadastrar(){
+        
+    }
+
     public void poc_editar(){
 
     }
