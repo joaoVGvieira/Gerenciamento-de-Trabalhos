@@ -1,6 +1,6 @@
 package POC_model;
 
-public class poc {
+public class Poc {
 
     private String titulo;
     private String[] lista_de_autores;
@@ -10,7 +10,7 @@ public class poc {
     private String area;
     private String caminhoPDF;
 
-    public poc(String titulo, String lista_de_autores,String data_postagem, String palavras_chave, String resumo, String area, String caminhoPDF) {
+    public Poc(String titulo, String lista_de_autores,String data_postagem, String palavras_chave, String resumo, String area, String caminhoPDF) {
         this.titulo = titulo;
         this.lista_de_autores = lista_de_autores.split(","); // Separar os nomes por vírgula
         this.data_postagem = data_postagem;
