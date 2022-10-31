@@ -8,7 +8,7 @@ public class Aluno extends Usuario {
 
     public Aluno(String nome, int matricula, String senha) {
         super(nome, matricula, senha);
-        
+        this.nivel=Tipo.tipo.Aluno;
     }
  
     public int getMatricula() {

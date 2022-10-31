@@ -8,6 +8,8 @@ public class Usuario {
 
     protected String senha;
 
+    protected Tipo.tipo nivel;
+
     //Construtor
     public Usuario(String nome, int matricula, String senha) {
         this.nome = nome;
