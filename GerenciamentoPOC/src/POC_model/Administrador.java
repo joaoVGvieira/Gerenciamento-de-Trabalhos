@@ -4,7 +4,7 @@ public class Administrador extends Usuario {
 
     public Administrador(String nome, int matricula, String senha) {
         super(nome, matricula, senha);
-        
+        this.nivel= Tipo.tipo.Administrador;
     }
 
     public void setMatricula(int matricula) {
