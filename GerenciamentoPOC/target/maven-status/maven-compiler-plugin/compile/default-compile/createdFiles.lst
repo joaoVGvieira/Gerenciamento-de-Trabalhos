@@ -1,0 +1,14 @@
+Controller\AlunoController.class
+DAO\POC.class
+Controller\POCController.class
+Model\Usuario.class
+Model\POC.class
+Model\Professor.class
+Controller\ProfessorController.class
+Model\TipoUsuario.class
+DAO\AlunoDAO.class
+DAO\ProfessorDAO.class
+View\Interface.class
+Model\Aluno.class
+DAO\Context.class
+com\mycompany\getpoc\GetPoc.class
