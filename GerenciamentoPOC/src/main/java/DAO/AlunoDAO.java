@@ -12,11 +12,14 @@ import java.util.ArrayList;
  */
 public class AlunoDAO {
     private ArrayList<Aluno> alunos;
+    
+    
     public AlunoDAO(){
         alunos = new ArrayList<>();
     }
     
     public void adicionarAluno(Aluno a){
+        //verificar se o aluno ja existe se nao, adicionar
         alunos.add(a);
     }
     

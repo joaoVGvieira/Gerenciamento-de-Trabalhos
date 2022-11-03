@@ -10,7 +10,7 @@ import Model.TipoUsuario;
 import Model.Usuario;
 
 /**
- *
+ *String nome, String usuario, String senha, int matricula, TipoUsuario tipo
  */
 public class AlunoController {
     
@@ -20,9 +20,11 @@ public class AlunoController {
     }
     
     public void cadastrarAluno(Aluno a){
-        if(a.getTipo().equals(TipoUsuario.ALUNO) && a.getMatricula() > 1234){
-            Context.alunoDAO.adicionarAluno(a);
-        }
+        // verificar se todos os atributos do aluno estão corretos
+        // se nome só possui letras
+        // se matricula so possui numeros e etc
+        // Ao final se td estiver certo chamar o DAO aluno para adiciona-lo no sistea
+        
     }
     
     public Aluno logar(Aluno a){

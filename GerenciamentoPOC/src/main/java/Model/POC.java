@@ -58,11 +58,11 @@ public class POC {
         this.resumo = resumo;
     }
 
-    public void setdata_postagem(String data_postagem) {
+    public void setData_postagem(String data_postagem) {
         this.data_postagem = data_postagem;
     }
 
-    public void setcaminhoPDF(String caminhoPDF){
+    public void setCaminhoPDF(String caminhoPDF){
         this.caminhoPDF = caminhoPDF;
     }
 
@@ -70,7 +70,7 @@ public class POC {
         return area;
     }
 
-    public String getdata_postagem() {
+    public String getData_postagem() {
         return this.data_postagem;
     }
 

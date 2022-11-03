@@ -1,12 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controller;
 
+import Model.Professor;
+import Model.TipoUsuario;
+import Model.Usuario;
 /**
  *
  */
 public class ProfessorController {
     
+    
+    
+    
+    
+    
+    public void cadastrarProfessor(Professor a){
+        //Verificar se todos os atributos de professor sao validos
+        //Chamar o DAOProfessor para cadastrar o professor
+    }
 }

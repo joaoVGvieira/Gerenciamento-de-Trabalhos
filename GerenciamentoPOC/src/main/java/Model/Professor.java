@@ -18,9 +18,8 @@ public class Professor extends Usuario{
         this.curso = curso;
     }
     
-    //public void pocCadastrar(){}
 
-    public boolean isIsAdm() {
+    public boolean isAdm() {
         return isAdm;
     }
 

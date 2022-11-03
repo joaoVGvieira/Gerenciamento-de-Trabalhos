@@ -8,11 +8,13 @@ package Model;
  *
  */
 public class Aluno extends Usuario{
+    
+    private int matricula;
+    
     public Aluno(String nome, String usuario, String senha, int matricula, TipoUsuario tipo){
         super(nome, usuario, senha, tipo);
         this.matricula = matricula;
     }
-    private int matricula;
 
     public int getMatricula() {
         return matricula;

@@ -18,6 +18,7 @@ public class ProfessorDAO {
     }
     
     public void adicionarProfessor(Professor p){
+        //verificar se o professor ja existe, se nao adicionar
         professores.add(p);
     }
     public ArrayList<Professor> listarProfessores(){

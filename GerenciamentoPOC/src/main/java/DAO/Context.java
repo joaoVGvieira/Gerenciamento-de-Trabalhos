@@ -10,7 +10,7 @@ import Model.Professor;
 import Model.TipoUsuario;
 
 /**
- *
+ * Nao tem oq mexer nesse arquivo
  */
 public abstract class Context {
     public static Aluno alunoLogado;
