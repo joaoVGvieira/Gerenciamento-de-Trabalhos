@@ -1,6 +1,7 @@
 
 package DAO;
 
+import Model.Aluno;
 import Model.POC;
 import java.util.ArrayList;
 
@@ -17,8 +18,17 @@ public class POCDAO {
     }
     
     public void adicionarPOC(POC p){
-        //Antes de adicionar eh preciso verificar se ja existe tal poc ja no sistema
         pocs.add(p);
+    }
+    
+    public POC procuraPOC(POC poc){
+        for(POC p : pocs){
+            if(p.getData_postagem().equals(poc.getData_postagem()) && 
+                    p.getTitulo().equals(poc.getTitulo())){
+                return p;
+            }
+        }
+        return null;
     }
     
 }

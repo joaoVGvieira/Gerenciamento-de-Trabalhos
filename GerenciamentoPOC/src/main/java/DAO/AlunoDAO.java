@@ -15,13 +15,9 @@ public class AlunoDAO {
         alunos = new ArrayList<>();
     }
     
-    public Aluno adicionarAluno(Aluno a){
-        //verificar se o aluno ja existe se nao, adicionar
-        if (alunos.indexOf(a) != -1){
+    public void adicionarAluno(Aluno a){
             alunos.add(a);
-            return a;
-        }
-        return null;
+
     }
     
     public ArrayList<Aluno> listarAlunos(){
