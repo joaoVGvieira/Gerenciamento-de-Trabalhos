@@ -25,9 +25,9 @@ public class Professor extends Usuario{
     @Override
     public String toString(){  
         if(isAdm){
-            return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo() + "\n" + "É admininistrador\n";
+            return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n" + "É admininistrador\n";
         }
-        return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo() + "\n" + "Não é administrador";
+        return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n" + "Não é administrador";
     }
     
 }

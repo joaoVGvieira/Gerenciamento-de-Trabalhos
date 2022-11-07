@@ -3,7 +3,14 @@ package Model;
 
 /**
  *
- */
+ */ 
 public enum TipoUsuario {
-    PROFESSOR, ALUNO
+    PROFESSOR("Professor"),
+    ALUNO("Aluno");
+    
+    final String string;
+    
+    TipoUsuario( String string ){
+        this.string = string;
+    }
 }

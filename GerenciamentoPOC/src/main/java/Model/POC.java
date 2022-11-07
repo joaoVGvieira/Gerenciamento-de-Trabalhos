@@ -8,6 +8,9 @@ package Model;
  *
  */
 public class POC {
+    
+    
+    //TODO adicionar usuario que fez o cadastro do POC
     private String titulo;
     private String[] lista_de_autores;
     private String orientador;

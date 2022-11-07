@@ -18,10 +18,9 @@ public class InterfaceAluno {
     public void mostrarOpcao1(){ // Pesquisar POC
         System.out.println("1- Pesquisar por Autores");
         System.out.println("2- Pesquisar por Orientador");
-        System.out.println("3- Pesquisar por Co-Orientador");
-        System.out.println("4- Pesquisar por Data");
-        System.out.println("5- Pesquisar por Palavras Chave");
-        System.out.println("6- Pesquisar por Area");
+        System.out.println("3- Pesquisar por resumo");
+        System.out.println("4- Pesquisar por Area");
+        System.out.println("5- Pesquisar por Título");
     }
     
     public void mostrarOpcao2(Aluno alunoLogado){ // Informações do Aluno
