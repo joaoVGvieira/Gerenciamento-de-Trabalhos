@@ -22,4 +22,12 @@ public class Professor extends Usuario{
         this.isAdm = isAdm;
     }
     
+    @Override
+    public String toString(){  
+        if(isAdm){
+            return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo() + "\n" + "É admininistrador\n";
+        }
+        return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo() + "\n" + "Não é administrador";
+    }
+    
 }

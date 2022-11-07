@@ -101,5 +101,10 @@ public class POC {
     public String caminhoPDF(){
         return caminhoPDF;
     }
+    
+    @Override //TODO
+    public String toString(){
+        return "TODO";
+    }
 }
 

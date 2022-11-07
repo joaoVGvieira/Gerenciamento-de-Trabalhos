@@ -44,7 +44,7 @@ public class InterfaceGeral {
                     String usuario = s.next();
                     System.out.print("Senha: ");
                     String senha = s.next();
-                    Aluno a = new Aluno(null, usuario, senha, 0, TipoUsuario.ALUNO);
+                    Aluno a = new Aluno(usuario, "0001", senha, TipoUsuario.ALUNO);
                     Context.alunoLogado = Context.alunoController.logar(a);
                     if(Context.alunoLogado != null){
                         this.mostrarAcoesAluno();
