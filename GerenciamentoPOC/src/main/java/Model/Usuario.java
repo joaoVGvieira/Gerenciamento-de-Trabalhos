@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
 /**
@@ -28,14 +25,6 @@ public abstract class Usuario {
         this.nome = nome;
     }
 
-    public String getUsuario() {
-        return matricula;
-    }
-
-    public void setUsuario(String matricula) {
-        this.matricula = matricula;
-    }
-
     public String getSenha() {
         return senha;
     }
@@ -51,6 +40,16 @@ public abstract class Usuario {
     public void setTipo(TipoUsuario tipo) {
         this.tipo = tipo;
     }
+
+    public String getMatricula() {
+        return this.matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+    
+    
 
 
 }

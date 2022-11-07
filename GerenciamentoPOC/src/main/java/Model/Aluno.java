@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
 /**
@@ -9,20 +6,8 @@ package Model;
  */
 public class Aluno extends Usuario{
     
-    private int matricula;
     
-    public Aluno(String nome, String usuario, String senha, int matricula, TipoUsuario tipo){
-        super(nome, usuario, senha, tipo);
-        this.matricula = matricula;
+    public Aluno(String nome, String matricula, String senha, TipoUsuario tipo){
+        super(nome, matricula, senha, tipo);
     }
-
-    public int getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
-    }
-    
-    
 }

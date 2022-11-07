@@ -1,3 +1,4 @@
+
 package Controller;
 
 import DAO.Context;
@@ -16,17 +17,24 @@ public class AlunoController {
         
     }
     
-    public void cadastrarAluno(Aluno a){
+    public boolean cadastrarAluno(Aluno a){
         
-        if(Pattern.matches("/^[A-Za-z]+$/", a.getNome())){//TODO}
-        if(Pattern.matches("/^[0-9]+$/", a.getMatricula())){//TODO}
+        if(Pattern.matches("/^[A-Za-z]+$/", a.getNome()) && (Pattern.matches("/^[0-9]+$/", a.getMatricula())) 
+                && (a.getTipo().equals(TipoUsuario.ALUNO))){  
+            if(Context.alunoDAO.buscarAluno(a) == null){
+                Context.alunoDAO.adicionarAluno(a);
+            }
+            return true;
+        }
+        return false;
+    }
         
         // verificar se todos os atributos do aluno estão corretos
-        // se nome só possui letras
-        // se matricula so possui numeros e etc
+        // se nome só possui letras FEITO
+        // se matricula so possui numeros e etc FEITO
         // Ao final se td estiver certo chamar o DAO aluno para adiciona-lo no sistema
         
-    }
+    
     
     public Aluno logar(Aluno a){
         return Context.alunoDAO.buscarAluno(a);

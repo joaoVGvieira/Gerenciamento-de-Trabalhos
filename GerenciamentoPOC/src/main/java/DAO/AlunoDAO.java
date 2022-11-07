@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package DAO;
 
 import Model.Aluno;
@@ -18,9 +15,13 @@ public class AlunoDAO {
         alunos = new ArrayList<>();
     }
     
-    public void adicionarAluno(Aluno a){
+    public Aluno adicionarAluno(Aluno a){
         //verificar se o aluno ja existe se nao, adicionar
-        alunos.add(a);
+        if (alunos.indexOf(a) != -1){
+            alunos.add(a);
+            return a;
+        }
+        return null;
     }
     
     public ArrayList<Aluno> listarAlunos(){
@@ -29,7 +30,7 @@ public class AlunoDAO {
     
     public Aluno buscarAluno(Aluno a){
         for(Aluno a1 : alunos){
-            if(a1.getUsuario().equals(a.getUsuario()) && 
+            if(a1.getMatricula().equals(a.getMatricula()) && 
                     a1.getSenha().equals(a.getSenha())){
                 return a1;
             }
