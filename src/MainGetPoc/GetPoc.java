@@ -2,6 +2,7 @@ package MainGetPoc;
 
 import DAO.Context;
 import Model.Aluno;
+import Model.Professor;
 import Model.TipoUsuario;
 import View.InterfaceGeral;
 
@@ -11,9 +12,11 @@ import View.InterfaceGeral;
 public class GetPoc {
 
     public static void main(String[] args) {
-        Aluno a = new Aluno("Joao", "1234", "3861", TipoUsuario.ALUNO); 
+        Aluno a = new Aluno("Joao", "1234", "3861", TipoUsuario.ALUNO);
         Context.alunoController.cadastrarAluno(a);
-        InterfaceGeral i = new InterfaceGeral(); // mudamos para fazer login com mat e senha em vez de nome e senha
+        Professor p = new Professor("fabricio", "4321", "0420", TipoUsuario.PROFESSOR, true);
+        Context.professorController.cadastrarProfessor(p);
+        InterfaceGeral i = new InterfaceGeral();
         i.exibirInterface();
     }
 }
