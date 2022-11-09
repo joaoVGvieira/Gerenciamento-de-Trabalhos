@@ -42,11 +42,11 @@ public class InterfaceGeral {
                 this.mostrarOpcaoLogar();
                 opcao = s.nextInt();
                 if (opcao == 1) {
-                    System.out.print("Usuario: ");
-                    String usuario = s.next();
+                    System.out.print("Matricula: ");
+                    String mat = s.next();
                     System.out.print("Senha: ");
                     String senha = s.next();
-                    Aluno a = new Aluno(usuario, "0001", senha, TipoUsuario.ALUNO);
+                    Aluno a = new Aluno(null, mat, senha, TipoUsuario.ALUNO);
                     Context.alunoLogado = Context.alunoController.logar(a);
                     if (Context.alunoLogado != null) {
                         this.mostrarAcoesAluno();
@@ -68,3 +68,4 @@ public class InterfaceGeral {
     }
 
 }
+
