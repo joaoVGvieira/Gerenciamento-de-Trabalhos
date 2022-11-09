@@ -25,6 +25,7 @@ public abstract class Context {
     public static POC pocAnalisando;
     public static POCDAO pocDAO = new POCDAO();
     public static POCController pocController = new POCController();
+    public static Aluno professsorLogado;
     
     
 }

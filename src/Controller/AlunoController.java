@@ -4,6 +4,7 @@ package Controller;
 
 import DAO.Context;
 import Model.Aluno;
+import Model.Professor;
 import Model.TipoUsuario;
 import Model.Usuario;
 import java.util.regex.*;
@@ -19,13 +20,13 @@ public class AlunoController {
     }
     
     public boolean cadastrarAluno(Aluno a){
-        System.out.println(Pattern.matches("^[a-zA-Z]*$", a.getNome()) );
         if(Pattern.matches("^[a-zA-Z]*$", a.getNome()) && (Pattern.matches("^[0-9]*$", a.getMatricula())) 
             && (a.getTipo().equals(TipoUsuario.ALUNO))){                  
             if(Context.alunoDAO.buscarAluno(a) == null){
                 Context.alunoDAO.adicionarAluno(a);
+                System.out.println("dadadad");
+                return true;
             }
-            return true;
         }
           return false;
     }

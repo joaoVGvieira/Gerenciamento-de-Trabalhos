@@ -45,7 +45,7 @@ public class InterfaceLogar {
         while (true) {
             this.mostrarOpcoesIniciais();
             opcao = s.nextInt();
-            if (opcao > 0 && opcao < 3) {
+            if (opcao == 1){
                 this.mostrarOpcaoLogar();
                 opcao = s.nextInt();
                 if (opcao == 1) {
@@ -56,7 +56,8 @@ public class InterfaceLogar {
                     Aluno a = new Aluno(null, mat, senha, TipoUsuario.ALUNO);
                     Context.alunoLogado = Context.alunoController.logar(a);
                     if (Context.alunoLogado != null) {
-                        this.mostrarAcoesAluno();
+                        InterfaceAluno i = new InterfaceAluno();
+                        i.mostrarOpcaoAluno();
                         int acao = s.nextInt();
                         if (acao == 1) {
                             System.out.print("Nome do POC: ");
@@ -67,7 +68,8 @@ public class InterfaceLogar {
                     } else {
                         System.out.println("Aluno não cadastrado.");
                     }
-                } else if (opcao == 2) {
+                } 
+                else if (opcao == 2) {
                     //Mesma logica de cima
                     System.out.print("Matricula: ");
                     String mat = s.next();
@@ -75,6 +77,7 @@ public class InterfaceLogar {
                     String senha = s.next();
                     Professor b = new Professor(null, mat, senha, TipoUsuario.PROFESSOR, true);
                     Context.professorLogado = Context.professorController.logar(b);
+               
                     if (Context.professorLogado != null) {
                         this.mostrarAcoesProfessor();
                         int acao = s.nextInt();
@@ -88,6 +91,53 @@ public class InterfaceLogar {
                         System.out.println("Professor não cadastrado.");
                     }
                 }
+            }else if(opcao == 2){
+                this.mostrarOpcaoLogar();
+                opcao = s.nextInt();
+                if (opcao == 1) {
+                    System.out.print("Nome: ");
+                    String Nome = s.next();
+                    System.out.print("Matricula: ");
+                    String mat = s.next();
+                    System.out.print("Senha: ");
+                    String senha = s.next();
+                    Aluno a = new Aluno(Nome, mat, senha, TipoUsuario.ALUNO);
+                    if (Context.alunoController.cadastrarAluno(a) == true) {
+                            System.out.println("Aluno Cadastrado!!!");
+                        }
+                    else {
+                        System.out.println("Aluno não cadastrado.");
+                    }
+                }
+                else if (opcao == 2) {
+                    
+                    System.out.print("Nome: ");
+                    String Nome = s.next();
+                    System.out.print("Matricula: ");
+                    String mat = s.next();
+                    System.out.print("Senha: ");
+                    String senha = s.next();
+                    System.out.print("O professor é ADMNISTRADOR:\n 1.SIM | 2. NAO\n");
+                    System.out.print("R=");
+                    int opc = s.nextInt();
+                    Professor b = new Professor(Nome, mat, senha, TipoUsuario.PROFESSOR, false);
+                    if(opc == 1){
+                        b.setIsAdm(true);
+                        Context.professorController.cadastrarProfessor(b);
+
+                    }
+                    else if(opc == 2){
+                        
+                        Context.professorController.cadastrarProfessor(b);
+
+                    }   
+                    if (Context.professorController.cadastrarProfessor(b) == true) {
+                          System.out.println("Professor Cadastrado!!!");
+
+                    } else {
+                        System.out.println("Professor não cadastrado.");
+                    }
+                }
             }
             else{
                 System.out.println("Opcao Invalida!!!");
@@ -96,6 +146,5 @@ public class InterfaceLogar {
     }
 
 }
-
 
 
