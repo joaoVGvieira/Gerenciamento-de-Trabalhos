@@ -5,10 +5,10 @@
 
 package com.mycompany.getpoc;
 
-import DAO.Context;
-import Model.Aluno;
-import Model.TipoUsuario;
-import View.InterfaceGeral;
+import DAO.*;
+import Model.*;
+
+import View.*;
 
 /**
  *
