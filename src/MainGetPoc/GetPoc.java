@@ -4,7 +4,7 @@ import DAO.Context;
 import Model.Aluno;
 import Model.Professor;
 import Model.TipoUsuario;
-import View.InterfaceGeral;
+import View.InterfaceLogar;
 
 /**
  *
@@ -16,7 +16,7 @@ public class GetPoc {
         Context.alunoController.cadastrarAluno(a);
         Professor p = new Professor("fabricio", "4321", "0420", TipoUsuario.PROFESSOR, true);
         Context.professorController.cadastrarProfessor(p);
-        InterfaceGeral i = new InterfaceGeral();
+        InterfaceLogar i = new InterfaceLogar();
         i.exibirInterface();
     }
 }

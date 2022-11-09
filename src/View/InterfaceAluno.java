@@ -10,8 +10,8 @@ public class InterfaceAluno {
     public void mostrarOpcaoAluno(){
         System.out.println("----- Opcoes do Aluno -----");
         System.out.println("1- Pesquisar POC");
-        System.out.println("2- Informações do aluno");
-        System.out.println("3- Trocar a senha");
+        //System.out.println("2- Informações do aluno");
+        //System.out.println("3- Trocar a senha");
         System.out.println("---------------------------");
     }
     

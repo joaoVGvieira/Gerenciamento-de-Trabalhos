@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  *
  */
-public class InterfaceGeral {
+public class InterfaceLogar {
 
     public void mostrarOpcoesIniciais() {
         System.out.println("----GetPoc----");
@@ -88,6 +88,9 @@ public class InterfaceGeral {
                         System.out.println("Professor não cadastrado.");
                     }
                 }
+            }
+            else{
+                System.out.println("Opcao Invalida!!!");
             }
         }
     }
