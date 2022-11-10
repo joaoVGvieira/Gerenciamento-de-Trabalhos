@@ -24,17 +24,7 @@ public class InterfaceLogar {
         System.out.println("2- Professor");
     }
 
-    public void mostrarAcoesAluno() {
-        System.out.println("Acoes");
-        System.out.println("1 - Buscar POC");
-    }
-    private void mostrarAcoesProfessor(){
-        System.out.println("1 - Cadastrar POC");
-        System.out.println("2 - Pesquisar POC");
-        System.out.println("3 - Alterar POC");
-        System.out.println("4 - Excluir POC");
-    }
-
+ 
     public boolean logarCadastrar() {
         return true;
     }
@@ -60,32 +50,62 @@ public class InterfaceLogar {
                         i.mostrarOpcaoAluno();
                         int acao = s.nextInt();
                         if (acao == 1) {
-                            System.out.print("Nome do POC: ");
-                            String nomePoc = s.next();
-                            System.out.println("Você buscou um POC");
-                            //TODO: chamar a controladora do poc pra pesquisar com base no nome
+                            i.mostrarOpcao1();
+                            acao = s.nextInt();
+                            if(acao==1){
+                                
+                            }else if(acao==2){
+                                
+                            }else if(acao == 3){
+                                
+                            }else if(acao == 4 ){
+                                
+                            }else if(acao == 5){
+                                
+                            }
+                        }else if(acao == 2){
+                            i.mostrarOpcao2(a);
                         }
                     } else {
                         System.out.println("Aluno não cadastrado.");
                     }
                 } 
                 else if (opcao == 2) {
-                    //Mesma logica de cima
                     System.out.print("Matricula: ");
                     String mat = s.next();
                     System.out.print("Senha: ");
                     String senha = s.next();
                     Professor b = new Professor(null, mat, senha, TipoUsuario.PROFESSOR, true);
                     Context.professorLogado = Context.professorController.logar(b);
-               
                     if (Context.professorLogado != null) {
-                        this.mostrarAcoesProfessor();
+                        InterfaceProfessor Ip = new InterfaceProfessor();
+                        Ip.mostrarOpcaoProfessor();
                         int acao = s.nextInt();
                         if (acao == 1) {
-                            System.out.print("Nome do POC: ");
-                            String nomePoc = s.next();
-                            System.out.println("Você buscou um POC");
-                            //TODO: chamar a controladora do poc pra pesquisar com base no nome
+                            Ip.mostrarOpcao1();
+                        }else if(acao == 2){
+                            Ip.mostrarOpcao2();
+                            acao = s.nextInt();
+                            if(acao==1){
+                                
+                            }else if(acao==2){
+                                
+                            }else if(acao == 3){
+                                
+                            }else if(acao == 4 ){
+                                
+                            }else if(acao == 5){
+                                
+                            }
+                        }else if(acao == 3){
+                            Ip.mostrarOpcao3();
+                        }else if(acao==4){
+                            Ip.mostrarOpcao4();
+                        }else if(acao == 5){
+                            Ip.mostrarOpcao5();
+                        }
+                        else{
+                            System.out.println("opcao invalida!!!");
                         }
                     } else {
                         System.out.println("Professor não cadastrado.");
@@ -117,20 +137,13 @@ public class InterfaceLogar {
                     String mat = s.next();
                     System.out.print("Senha: ");
                     String senha = s.next();
-                    System.out.print("O professor é ADMNISTRADOR:\n 1.SIM | 2. NAO\n");
+                    System.out.print("O professor é ADMNISTRADOR:\n1.SIM | 2. NAO\n");
                     System.out.print("R=");
                     int opc = s.nextInt();
                     Professor b = new Professor(Nome, mat, senha, TipoUsuario.PROFESSOR, false);
                     if(opc == 1){
                         b.setIsAdm(true);
-                        Context.professorController.cadastrarProfessor(b);
-
-                    }
-                    else if(opc == 2){
-                        
-                        Context.professorController.cadastrarProfessor(b);
-
-                    }   
+                    } 
                     if (Context.professorController.cadastrarProfessor(b) == true) {
                           System.out.println("Professor Cadastrado!!!");
 

@@ -10,6 +10,7 @@ public class InterfaceProfessor {
         System.out.println("2- Pesquisar POC");
         System.out.println("3- Editar POC");
         System.out.println("4- Remover POC");
+        System.out.println("5- Mudar senha de usuario");
         System.out.println("-------------------------------");
     }
     
@@ -31,6 +32,9 @@ public class InterfaceProfessor {
     }
     
     public void mostrarOpcao4(){ //TODO
+        
+    }
+    public void mostrarOpcao5(){ //TODO
         
     }
 

@@ -11,7 +11,6 @@ public class InterfaceAluno {
         System.out.println("----- Opcoes do Aluno -----");
         System.out.println("1- Pesquisar POC");
         System.out.println("2- Informações do aluno");
-        System.out.println("3- Trocar a senha");
         System.out.println("---------------------------");
     }
     
@@ -25,11 +24,7 @@ public class InterfaceAluno {
     
     public void mostrarOpcao2(Aluno alunoLogado){ // Informações do Aluno
         System.out.println("Nome: " + alunoLogado.getNome());
-        System.out.println("Matricula: ");
-        System.out.println("Senha: ");
-    }
-    
-    public void mostrarOpcao3(){ // Trocar senha
-        //TODO digitar senha antiga para poder trocar para nova
+        System.out.println("Matricula: " + alunoLogado.getMatricula());
+        System.out.println("Senha: " + alunoLogado.getSenha());
     }
 }
