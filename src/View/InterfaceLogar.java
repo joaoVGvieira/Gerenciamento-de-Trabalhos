@@ -124,14 +124,29 @@ public class InterfaceLogar {
                                 Context.pocController.pesquisarAutor(Context.pocDAO.getPOC(), autor);
 
                             }else if(acao==2){
-                                
+                                System.out.println("Digite o nome do orientador: ");
+                                String orientador = s.next();
+                                Context.pocController.pesquisarOrientador(Context.pocDAO.getPOC(), orientador);
                             }else if(acao == 3){
-                                
+                                System.out.println("Digite o resumo: ");
+                                String resumo = s.next();
+                                Context.pocController.pesquisarResumo(Context.pocDAO.getPOC(), resumo);
                             }else if(acao == 4 ){
-                                
+                                System.out.println("Digite a area: ");
+                                String area = s.next();
+                                Context.pocController.pesquisarArea(Context.pocDAO.getPOC(), area); 
+
                             }else if(acao == 5){
-                                
+                                System.out.println("Digite o titulo: ");
+                                String titulo = s.next();
+                                Context.pocController.pesquisarTitulo(Context.pocDAO.getPOC(), titulo);   
                             }
+                            else if(acao == 6){
+                                System.out.println("Digite o ano: ");
+                                String ano = s.next();
+                                Context.pocController.pesquisarAno(Context.pocDAO.getPOC(), ano);    
+                            }
+
                         }
                         //EDITAR POC
                         else if(acao == 3){

@@ -13,19 +13,14 @@ import Model.Aluno;
  */
 public class POCController {
     
-    
-    
-    
-    
     public void CadastrarPOC(POC a){
         //Verificar se todos os atributos do POC sao validos
         //Chamar o DAO do POC para adicionar-lo
-        
-        
         if(Context.pocDAO.procuraPOC(a) == null){ // verificando se esse poc ja foi cadastrado
             Context.pocDAO.adicionarPOC(a);
         }
-    }    
+    }
+
     public void pesquisarAutor(POC a, String autor){
         for(int i = 0; i < a.getLista_de_autores().length; i++){
             if(a.getLista_de_autores().equals(autor)){

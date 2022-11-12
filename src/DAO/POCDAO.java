@@ -21,7 +21,7 @@ public class POCDAO {
         pocs.add(p);
     }
     public POC getPOC(){
-        return pocs.get(0);
+        return this.pocs.get(0);
     }
     
     
