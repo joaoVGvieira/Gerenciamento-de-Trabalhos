@@ -20,6 +20,10 @@ public class POCDAO {
     public void adicionarPOC(POC p){
         pocs.add(p);
     }
+    public POC getPOC(){
+        return pocs.get(0);
+    }
+    
     
     public POC procuraPOC(POC poc){
         for(POC p : pocs){

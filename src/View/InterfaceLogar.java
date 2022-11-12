@@ -2,6 +2,7 @@ package View;
 
 import DAO.Context;
 import Model.Aluno;
+import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
 import java.util.Scanner;
@@ -15,6 +16,7 @@ public class InterfaceLogar {
         System.out.println("----GetPoc----");
         System.out.println("1- Logar");
         System.out.println("2- Cadastrar");
+        System.out.println("3- Sair");
     }
 
     public void mostrarOpcaoLogar() {
@@ -22,6 +24,8 @@ public class InterfaceLogar {
         System.out.println("Voce é:");
         System.out.println("1- Aluno");
         System.out.println("2- Professor");
+        System.out.println("3- ADM");
+        System.out.println("4- Voltar");
     }
 
  
@@ -32,12 +36,16 @@ public class InterfaceLogar {
     public void exibirInterface() {
         Scanner s = new Scanner(System.in);
         int opcao;
+        
         while (true) {
             this.mostrarOpcoesIniciais();
             opcao = s.nextInt();
+            
+            //LOGAR
             if (opcao == 1){
                 this.mostrarOpcaoLogar();
                 opcao = s.nextInt();
+                //ALUNO
                 if (opcao == 1) {
                     System.out.print("Matricula: ");
                     String mat = s.next();
@@ -69,7 +77,8 @@ public class InterfaceLogar {
                     } else {
                         System.out.println("Aluno não cadastrado.");
                     }
-                } 
+                }
+                //PROFESSOR 
                 else if (opcao == 2) {
                     System.out.print("Matricula: ");
                     String mat = s.next();
@@ -81,13 +90,39 @@ public class InterfaceLogar {
                         InterfaceProfessor Ip = new InterfaceProfessor();
                         Ip.mostrarOpcaoProfessor();
                         int acao = s.nextInt();
+                        
+                        //CADASTRAR POC
                         if (acao == 1) {
-                            Ip.mostrarOpcao1();
-                        }else if(acao == 2){
-                            Ip.mostrarOpcao2();
+                            System.out.println("Titulo: ");
+                            String titulo = s.next();
+                            System.out.println("Lista de autores: ");
+                            String lista_de_autores = s.next();
+                            System.out.println("Orientador: ");
+                            String orientador = s.next();
+                            System.out.println("Co-orientador: ");
+                            String coOrientador = s.next();
+                            System.out.println("Data de postagem: ");
+                            String data_postagem = s.next();
+                            System.out.println("Palavras-chave: ");
+                            String palavras_chave = s.next();
+                            System.out.println("Resumo: ");
+                            String resumo = s.next();
+                            System.out.println("Area: ");
+                            String area = s.next();
+                            System.out.println("Caminho do PDF: ");
+                            String caminhoPDF = s.next();
+                            POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, data_postagem, palavras_chave, resumo, area, caminhoPDF);
+                            Context.pocController.CadastrarPOC(p);
+                        }
+                        //PESQUISAR POC
+                        else if(acao == 2){
+                            Ip.opcaoPesquisa();
                             acao = s.nextInt();
                             if(acao==1){
-                                
+                                System.out.println("Digite o nome do autor: ");
+                                String autor = s.next();
+                                Context.pocController.pesquisarAutor(Context.pocDAO.getPOC(), autor);
+
                             }else if(acao==2){
                                 
                             }else if(acao == 3){
@@ -97,21 +132,45 @@ public class InterfaceLogar {
                             }else if(acao == 5){
                                 
                             }
-                        }else if(acao == 3){
+                        }
+                        //EDITAR POC
+                        else if(acao == 3){
                             Ip.mostrarOpcao3();
-                        }else if(acao==4){
+                        }
+                        //REMOVER POC
+                        else if(acao==4){
                             Ip.mostrarOpcao4();
-                        }else if(acao == 5){
+                        }
+                        //MUDAR SENHA
+                        else if(acao == 5){
                             Ip.mostrarOpcao5();
+                        }
+                        //VOLTAR
+                        else if(acao == 6){
+                            this.mostrarOpcaoLogar();
                         }
                         else{
                             System.out.println("opcao invalida!!!");
                         }
+
                     } else {
                         System.out.println("Professor não cadastrado.");
                     }
                 }
-            }else if(opcao == 2){
+                //ADMINISTRADOR
+                else if(opcao == 3){
+                    break;
+                }
+                //VOLTAR
+                else if(opcao == 4){
+                    this.exibirInterface();
+                }
+                else{
+                    System.out.println("Opcao invalida!!!");
+                }
+            }
+            //CADASTRAR
+            else if(opcao == 2){
                 this.mostrarOpcaoLogar();
                 opcao = s.nextInt();
                 if (opcao == 1) {
@@ -151,6 +210,11 @@ public class InterfaceLogar {
                         System.out.println("Professor não cadastrado.");
                     }
                 }
+            }
+            //SAIR
+            else if(opcao == 3){
+                System.out.println("Saindo...");
+                break;
             }
             else{
                 System.out.println("Opcao Invalida!!!");

@@ -11,6 +11,7 @@ public class InterfaceProfessor {
         System.out.println("3- Editar POC");
         System.out.println("4- Remover POC");
         System.out.println("5- Mudar senha de usuario");
+        System.out.println("6- Voltar");
         System.out.println("-------------------------------");
     }
     
@@ -18,12 +19,14 @@ public class InterfaceProfessor {
         
     }
     
-    public void mostrarOpcao2(){ 
+    public void opcaoPesquisa(){ 
         System.out.println("1- Pesquisar por Autores");
         System.out.println("2- Pesquisar por Orientador");
         System.out.println("3- Pesquisar por resumo");
         System.out.println("4- Pesquisar por Area");
         System.out.println("5- Pesquisar por Título");
+        System.out.println("6- Pesquisar por Ano");
+        System.out.println("7- Voltar");
         
     }
     
