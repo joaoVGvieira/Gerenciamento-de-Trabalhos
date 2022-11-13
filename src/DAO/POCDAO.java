@@ -44,6 +44,7 @@ public class POCDAO {
                 return p;
             }
             System.out.println(p.getLista_de_autores());
+           
         }
         System.out.println(autor);
         return null;
@@ -58,7 +59,7 @@ public class POCDAO {
                 System.out.println("dasdsafsa certo");
                 return p;
             }
-                        System.out.println(p.getCoOrientador());
+                    System.out.println(p.getCoOrientador());
 
         }
         return null;
@@ -72,6 +73,8 @@ public class POCDAO {
             if(p.getResumo().equals(resumo)){
                 return p;
             }
+            System.out.println(p.getResumo());
+            System.out.println(resumo);
         }
         return null;
     }

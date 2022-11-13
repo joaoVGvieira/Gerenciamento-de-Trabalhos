@@ -11,6 +11,7 @@ public class InterfaceAluno {
         System.out.println("----- Opcoes do Aluno -----");
         System.out.println("1- Pesquisar POC");
         System.out.println("2- Informações do aluno");
+         System.out.println("3- Voltar Menu Inicial");
         System.out.println("---------------------------");
     }
     
