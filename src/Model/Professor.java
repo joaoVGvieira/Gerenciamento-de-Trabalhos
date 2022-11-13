@@ -12,6 +12,10 @@ public class Professor extends Usuario{
         super(nome, matricula, senha, tipo);
         this.isAdm = isAdm;
     }
+
+    public Professor() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 
     public boolean isAdm() {

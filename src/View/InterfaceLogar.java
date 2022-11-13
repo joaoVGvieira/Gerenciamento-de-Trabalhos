@@ -1,5 +1,6 @@
 package View;
 
+import DAO.AlunoDAO;
 import DAO.Context;
 import Model.Aluno;
 import Model.POC;
@@ -36,7 +37,6 @@ public class InterfaceLogar {
     public void exibirInterface() {
         Scanner s = new Scanner(System.in);
         int opcao;
-        
         while (true) {
             this.mostrarOpcoesIniciais();
             opcao = s.nextInt();
@@ -60,19 +60,24 @@ public class InterfaceLogar {
                         if (acao == 1) {
                             i.mostrarOpcao1();
                             acao = s.nextInt();
-                            if(acao==1){
-                                
-                            }else if(acao==2){
-                                
-                            }else if(acao == 3){
-                                
-                            }else if(acao == 4 ){
-                                
-                            }else if(acao == 5){
-                                
+                            switch (acao) {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                case 5:
+                                    break;
+                                default:
+                                    break;
                             }
                         }else if(acao == 2){
-                            i.mostrarOpcao2(a);
+                            Aluno aluno = Context.alunoDAO.buscarAluno(a);
+                      
+                             i.mostrarOpcao2(aluno);
                         }
                     } else {
                         System.out.println("Aluno não cadastrado.");
@@ -90,17 +95,16 @@ public class InterfaceLogar {
                         InterfaceProfessor Ip = new InterfaceProfessor();
                         Ip.mostrarOpcaoProfessor();
                         int acao = s.nextInt();
-                        
                         //CADASTRAR POC
                         if (acao == 1) {
                             System.out.println("Titulo: ");
-                            String titulo = s.next();
+                            String titulo = s.nextLine();
                             System.out.println("Lista de autores: ");
-                            String lista_de_autores = s.next();
+                            String lista_de_autores = s.nextLine();
                             System.out.println("Orientador: ");
-                            String orientador = s.next();
+                            String orientador = s.nextLine();
                             System.out.println("Co-orientador: ");
-                            String coOrientador = s.next();
+                            String coOrientador = s.nextLine();
                             System.out.println("Data de postagem: ");
                             String data_postagem = s.next();
                             System.out.println("Palavras-chave: ");
@@ -120,31 +124,31 @@ public class InterfaceLogar {
                             acao = s.nextInt();
                             if(acao==1){
                                 System.out.println("Digite o nome do autor: ");
-                                String autor = s.next();
-                                Context.pocController.pesquisarAutor(Context.pocDAO.getPOC(), autor);
+                                String autores = s.next();
+                                Context.pocDAO.pesquisarAutor(autores);
 
                             }else if(acao==2){
                                 System.out.println("Digite o nome do orientador: ");
-                                String orientador = s.next();
-                                Context.pocController.pesquisarOrientador(Context.pocDAO.getPOC(), orientador);
+                                String orientadorr = s.next();
+                                Context.pocDAO.pesquisarOrientador(orientadorr);
                             }else if(acao == 3){
                                 System.out.println("Digite o resumo: ");
-                                String resumo = s.next();
-                                Context.pocController.pesquisarResumo(Context.pocDAO.getPOC(), resumo);
+                                String resumoo = s.next();
+                                Context.pocDAO.pesquisarResumo(resumoo);
                             }else if(acao == 4 ){
                                 System.out.println("Digite a area: ");
-                                String area = s.next();
-                                Context.pocController.pesquisarArea(Context.pocDAO.getPOC(), area); 
+                                String areaa = s.next();
+                                Context.pocDAO.pesquisarArea(areaa);
 
                             }else if(acao == 5){
                                 System.out.println("Digite o titulo: ");
-                                String titulo = s.next();
-                                Context.pocController.pesquisarTitulo(Context.pocDAO.getPOC(), titulo);   
+                                String tituloo = s.next();
+                                Context.pocDAO.pesquisarTitulo(tituloo);
                             }
                             else if(acao == 6){
                                 System.out.println("Digite o ano: ");
-                                String ano = s.next();
-                                Context.pocController.pesquisarAno(Context.pocDAO.getPOC(), ano);    
+                                String anoo = s.next();
+                                Context.pocDAO.pesquisarAno(anoo);    
                             }
 
                         }
