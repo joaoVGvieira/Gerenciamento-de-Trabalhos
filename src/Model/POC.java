@@ -20,6 +20,9 @@ public class POC {
     private String resumo;
     private String area;
     private String caminhoPDF;
+    
+
+    
 
     public POC(String titulo, String lista_de_autores, String orientador, String coOrientador, String data_postagem, String palavras_chave, String resumo, String area, String caminhoPDF) {
         this.titulo = titulo;
@@ -105,8 +108,22 @@ public class POC {
         return caminhoPDF;
     }
     
-    @Override //TODO
-    public String toString(){
-        return "TODO";
+    public void printar(){
+        System.out.println("Titulo: " + this.titulo);
+        System.out.print("Lista de autores: ");
+        for (String lista_de_autore : this.lista_de_autores) {
+            System.out.print(lista_de_autore + " ");
+        }
+        System.out.println("\nOrientador: " + this.orientador);
+        System.out.println("Co-orientador: " + this.orientador);
+        System.out.println("Data da postagem: " + this.data_postagem);
+        System.out.print("Palavras chave: ");
+        for (String palavras_chave1 : this.palavras_chave) {
+            System.out.print(palavras_chave1 + " ");
+        }
+        System.out.println("\nResumo: " + this.resumo);
+        System.out.println("Area: " + this.area);
+        System.out.println("Caminho PDF: " + this.caminhoPDF);
     }
+    
 }

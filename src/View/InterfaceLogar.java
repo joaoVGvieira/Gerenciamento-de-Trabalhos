@@ -6,6 +6,7 @@ import Model.Aluno;
 import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
+import static java.lang.System.in;
 import java.util.Scanner;
 
 /**
@@ -105,24 +106,34 @@ public class InterfaceLogar {
                              acao = s.nextInt();
                             //CADASTRAR POC
                             if (acao == 1) {
+                                s.nextLine();
                                 System.out.println("Titulo: ");
-                                String titulo = s.next();
+                                String titulo = s.nextLine();
+                                //s.nextLine();
                                 System.out.println("Lista de autores: ");
-                                String lista_de_autores = s.next();
+                                String lista_de_autores = s.nextLine();
+                                //s.nextLine();
                                 System.out.println("Orientador: ");
                                 String orientador = s.next();
+                                s.nextLine();
                                 System.out.println("Co-orientador: ");
                                 String coOrientador = s.next();
+                                s.nextLine();
                                 System.out.println("Data de postagem: ");
                                 String data_postagem = s.next();
+                                s.nextLine();
                                 System.out.println("Palavras-chave: ");
-                                String palavras_chave = s.next();
+                                String palavras_chave = s.nextLine();
+                                //s.nextLine();
                                 System.out.println("Resumo: ");
-                                String resumo = s.next();
+                                String resumo = s.nextLine();
+                                //s.nextLine();
                                 System.out.println("Area: ");
                                 String area = s.next();
+                                s.nextLine();
                                 System.out.println("Caminho do PDF: ");
                                 String caminhoPDF = s.next();
+                                s.nextLine();
                                 POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, data_postagem, palavras_chave, resumo, area, caminhoPDF);
                                 Context.pocController.CadastrarPOC(p);
                             }
@@ -138,25 +149,47 @@ public class InterfaceLogar {
                                 }else if(acao==2){
                                     System.out.println("Digite o nome do orientador: ");
                                     String orientadorr = s.next();
-                                    Context.pocDAO.pesquisarOrientador(orientadorr);
+                                    if(Context.pocDAO.pesquisarOrientador(orientadorr) == null){
+                                        System.out.println("POC nao encontrado!");
+                                    }else{
+                                        Context.pocDAO.pesquisarOrientador(orientadorr).printar();
+                                    }
+                                
                                 }else if(acao == 3){
                                     System.out.println("Digite o resumo: ");
                                     String resumoo = s.next();
-                                    Context.pocDAO.pesquisarResumo(resumoo);
+                                    if(Context.pocDAO.pesquisarResumo(resumoo) == null){
+                                        System.out.println("POC nao encontrado!");
+                                    }else{
+                                        Context.pocDAO.pesquisarResumo(resumoo).printar();
+                                    }
+                                
                                 }else if(acao == 4 ){
                                     System.out.println("Digite a area: ");
                                     String areaa = s.next();
-                                    Context.pocDAO.pesquisarArea(areaa);
+                                    if(Context.pocDAO.pesquisarArea(areaa) == null){
+                                        System.out.println("POC nao encontrado!");
+                                    }else{
+                                        Context.pocDAO.pesquisarArea(areaa).printar();
+                                    }
 
                                 }else if(acao == 5){
                                     System.out.println("Digite o titulo: ");
                                     String tituloo = s.next();
-                                    Context.pocDAO.pesquisarTitulo(tituloo);
-                                }
-                                else if(acao == 6){
+                                    if(Context.pocDAO.pesquisarTitulo(tituloo) == null){
+                                        System.out.println("POC nao encontrado!");
+                                    }else{
+                                        Context.pocDAO.pesquisarTitulo(tituloo).printar();
+                                    }
+                                
+                                }else if(acao == 6){
                                     System.out.println("Digite o ano: ");
                                     String anoo = s.next();
-                                    Context.pocDAO.pesquisarAno(anoo);    
+                                    if(Context.pocDAO.pesquisarAno(anoo) == null){
+                                        System.out.println("POC nao encontrado!");
+                                    }else{
+                                        Context.pocDAO.pesquisarAno(anoo).printar();
+                                    }  
                                 }
 
                             }

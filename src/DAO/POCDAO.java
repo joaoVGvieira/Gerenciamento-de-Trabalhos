@@ -54,16 +54,11 @@ public class POCDAO {
     
     public POC pesquisarOrientador(String orientador){
         for(POC p : pocs){
-            
-            if(p.getCoOrientador().equals(orientador)){
-                System.out.println("dasdsafsa certo");
+            if(p.getOrientador().equals(orientador)){
                 return p;
             }
-                    System.out.println(p.getCoOrientador());
-
         }
         return null;
-
     }
     
  
@@ -73,8 +68,6 @@ public class POCDAO {
             if(p.getResumo().equals(resumo)){
                 return p;
             }
-            System.out.println(p.getResumo());
-            System.out.println(resumo);
         }
         return null;
     }
