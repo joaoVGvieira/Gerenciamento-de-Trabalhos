@@ -109,13 +109,14 @@ public class POC {
     }
     
     public void printar(){
+        System.out.println();
         System.out.println("Titulo: " + this.titulo);
         System.out.print("Lista de autores: ");
         for (String lista_de_autore : this.lista_de_autores) {
             System.out.print(lista_de_autore + " ");
         }
         System.out.println("\nOrientador: " + this.orientador);
-        System.out.println("Co-orientador: " + this.orientador);
+        System.out.println("Co-orientador: " + this.coOrientador);
         System.out.println("Data da postagem: " + this.data_postagem);
         System.out.print("Palavras chave: ");
         for (String palavras_chave1 : this.palavras_chave) {
@@ -124,6 +125,7 @@ public class POC {
         System.out.println("\nResumo: " + this.resumo);
         System.out.println("Area: " + this.area);
         System.out.println("Caminho PDF: " + this.caminhoPDF);
+        System.out.println();
     }
     
 }

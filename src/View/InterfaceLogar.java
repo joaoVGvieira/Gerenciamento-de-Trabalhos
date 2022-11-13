@@ -26,7 +26,6 @@ public class InterfaceLogar {
         System.out.println("Voce é:");
         System.out.println("1- Aluno");
         System.out.println("2- Professor");
-        System.out.println("3- ADM");
         System.out.println("4- Voltar");
     }
 
@@ -84,6 +83,9 @@ public class InterfaceLogar {
                             }else if(acao == 3 ){
                                 break;
                             }
+                            else{
+                                System.out.println("Opcao Invalida!!!");
+                            }
                         }while(acao!=3);
                         
                     } else {
@@ -139,9 +141,10 @@ public class InterfaceLogar {
                             }
                             //PESQUISAR POC
                             else if(acao == 2){
-                                Ip.opcaoPesquisa();
-                                acao = s.nextInt();
-                                if(acao==1){
+                                do{
+                                    Ip.opcaoPesquisa();
+                                    acao = s.nextInt();
+                                    if(acao==1){
                                     System.out.println("Digite o nome do autor: ");
                                     String autores = s.next();
                                     Context.pocDAO.pesquisarAutor(autores);
@@ -150,6 +153,7 @@ public class InterfaceLogar {
                                     System.out.println("Digite o nome do orientador: ");
                                     String orientadorr = s.next();
                                     if(Context.pocDAO.pesquisarOrientador(orientadorr) == null){
+                                        System.out.println();
                                         System.out.println("POC nao encontrado!");
                                     }else{
                                         Context.pocDAO.pesquisarOrientador(orientadorr).printar();
@@ -159,6 +163,7 @@ public class InterfaceLogar {
                                     System.out.println("Digite o resumo: ");
                                     String resumoo = s.next();
                                     if(Context.pocDAO.pesquisarResumo(resumoo) == null){
+                                        System.out.println();
                                         System.out.println("POC nao encontrado!");
                                     }else{
                                         Context.pocDAO.pesquisarResumo(resumoo).printar();
@@ -168,6 +173,7 @@ public class InterfaceLogar {
                                     System.out.println("Digite a area: ");
                                     String areaa = s.next();
                                     if(Context.pocDAO.pesquisarArea(areaa) == null){
+                                        System.out.println();
                                         System.out.println("POC nao encontrado!");
                                     }else{
                                         Context.pocDAO.pesquisarArea(areaa).printar();
@@ -177,6 +183,7 @@ public class InterfaceLogar {
                                     System.out.println("Digite o titulo: ");
                                     String tituloo = s.next();
                                     if(Context.pocDAO.pesquisarTitulo(tituloo) == null){
+                                        System.out.println();
                                         System.out.println("POC nao encontrado!");
                                     }else{
                                         Context.pocDAO.pesquisarTitulo(tituloo).printar();
@@ -186,11 +193,20 @@ public class InterfaceLogar {
                                     System.out.println("Digite o ano: ");
                                     String anoo = s.next();
                                     if(Context.pocDAO.pesquisarAno(anoo) == null){
+                                        System.out.println();
                                         System.out.println("POC nao encontrado!");
                                     }else{
                                         Context.pocDAO.pesquisarAno(anoo).printar();
                                     }  
                                 }
+                                else if(acao == 7){
+                                    break;
+                                }
+                                else{
+                                        System.out.println("Opcao Invalida!!!");
+                                }   
+
+                                }while(acao != 7);
 
                             }
                             //EDITAR POC
@@ -212,19 +228,13 @@ public class InterfaceLogar {
                             else{
                                 System.out.println("opcao invalida!!!");
                             }
-
-                             
+                            
                         }while(acao!=6);
                     }    
                     else {
                         System.out.println("Professor não cadastrado.");
                     }
                 }    
-                //ADMINISTRADOR
-       
-                else if(opcao == 3){
-                    break;
-                }
                 //VOLTAR
                 else if(opcao == 4){
                     this.exibirInterface();
