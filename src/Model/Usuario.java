@@ -16,6 +16,8 @@ public abstract class Usuario {
         this.senha = senha;
         this.tipo = tipo;
     }
+    
+    public abstract boolean matriculaValida();
 
     public String getNome() {
         return nome;

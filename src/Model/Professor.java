@@ -1,6 +1,8 @@
 
 package Model;
 
+import java.util.regex.Pattern;
+
 /**
  *
  */
@@ -31,4 +33,10 @@ public class Professor extends Usuario{
         return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n" + "Não é administrador";
     }
     
+    @Override
+    public boolean matriculaValida() {
+        return (Pattern.matches("^[a-zA-Z]*$", getNome()) && (Pattern.matches("^[0-9]*$", getMatricula())) 
+            && (getTipo().equals(TipoUsuario.PROFESSOR)));
+    }
+   
 }

@@ -20,15 +20,13 @@ public class AlunoController {
     }
     
     public boolean cadastrarAluno(Aluno a){
-        if(Pattern.matches("^[a-zA-Z]*$", a.getNome()) && (Pattern.matches("^[0-9]*$", a.getMatricula())) 
-            && (a.getTipo().equals(TipoUsuario.ALUNO))){                  
+        if(a.matriculaValida()){                  
             if(Context.alunoDAO.buscarAluno(a) == null){
                 Context.alunoDAO.adicionarAluno(a);
-                System.out.println("dadadad");
                 return true;
             }
         }
-          return false;
+        return false;
     }
         
         // verificar se todos os atributos do aluno estão corretos
