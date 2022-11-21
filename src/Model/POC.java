@@ -12,11 +12,11 @@ public class POC {
     
     //TODO adicionar usuario que fez o cadastro do POC
     private String titulo;
-    private String[] lista_de_autores;
+    private String[] listaDeAutores;
     private String orientador;
     private String coOrientador;
-    private String data_postagem;
-    private String[] palavras_chave;
+    private String dataPostagem;
+    private String[] palavrasChave;
     private String resumo;
     private String area;
     private String caminhoPDF;
@@ -24,13 +24,13 @@ public class POC {
 
     
 
-    public POC(String titulo, String lista_de_autores, String orientador, String coOrientador, String data_postagem, String palavras_chave, String resumo, String area, String caminhoPDF) {
+    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, String dataPostagem, String palavrasChave, String resumo, String area, String caminhoPDF) {
         this.titulo = titulo;
-        this.lista_de_autores = lista_de_autores.split(","); // Separar os nomes por vírgula
+        this.listaDeAutores = listaDeAutores.split(","); // Separar os nomes por vírgula
         this.orientador = orientador;
         this.coOrientador = coOrientador;
-        this.data_postagem = data_postagem;
-        this.palavras_chave = palavras_chave.split(" "); // Separar as palavras chave por espaço
+        this.dataPostagem = dataPostagem;
+        this.palavrasChave = palavrasChave.split(" "); // Separar as palavras chave por espaço
         this.resumo = resumo;
         this.area = area;
         this.caminhoPDF = caminhoPDF;
@@ -40,8 +40,8 @@ public class POC {
         this.area = area;
     }
 
-    public void setLista_de_autores(String lista_de_autores) {
-        this.lista_de_autores = lista_de_autores.split(",");
+    public void setListaDeAutores(String listaDeAutores) {
+        this.listaDeAutores = listaDeAutores.split(",");
     }
 
     public void setOrientador(String orientador) {
@@ -52,8 +52,8 @@ public class POC {
         this.coOrientador = coOrientador;
     }
 
-    public void setPalavras_chave(String palavras_chave) {
-        this.palavras_chave = palavras_chave.split(" ");
+    public void setPalavrasChave(String palavrasChave) {
+        this.palavrasChave = palavrasChave.split(" ");
     }
 
     public void setTitulo(String titulo) {
@@ -64,8 +64,8 @@ public class POC {
         this.resumo = resumo;
     }
 
-    public void setData_postagem(String data_postagem) {
-        this.data_postagem = data_postagem;
+    public void setDataPostagem(String dataPostagem) {
+        this.dataPostagem = dataPostagem;
     }
 
     public void setCaminhoPDF(String caminhoPDF){
@@ -76,12 +76,12 @@ public class POC {
         return area;
     }
 
-    public String getData_postagem() {
-        return this.data_postagem;
+    public String getDataPostagem() {
+        return this.dataPostagem;
     }
 
-    public String[] getLista_de_autores() {
-        return lista_de_autores;
+    public String[] getListaDeAutores() {
+        return listaDeAutores;
     }
 
     public String getOrientador() {
@@ -92,8 +92,8 @@ public class POC {
         return coOrientador;
     }
 
-    public String[] getPalavras_chave() {
-        return palavras_chave;
+    public String[] getPalavrasChave() {
+        return palavrasChave;
     }
 
     public String getResumo() {
@@ -112,14 +112,14 @@ public class POC {
         System.out.println();
         System.out.println("Titulo: " + this.titulo);
         System.out.print("Lista de autores: ");
-        for (String lista_de_autore : this.lista_de_autores) {
-            System.out.print(lista_de_autore + " ");
+        for (String lista_de_autore : this.listaDeAutores) {
+            System.out.print(listaDeAutores + " ");
         }
         System.out.println("\nOrientador: " + this.orientador);
         System.out.println("Co-orientador: " + this.coOrientador);
-        System.out.println("Data da postagem: " + this.data_postagem);
+        System.out.println("Data da postagem: " + this.dataPostagem);
         System.out.print("Palavras chave: ");
-        for (String palavras_chave1 : this.palavras_chave) {
+        for (String palavras_chave1 : this.palavrasChave) {
             System.out.print(palavras_chave1 + " ");
         }
         System.out.println("\nResumo: " + this.resumo);

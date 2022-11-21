@@ -27,7 +27,7 @@ public class POCDAO {
     
     public POC procuraPOC(POC poc){
         for(POC p : pocs){
-            if(p.getData_postagem().equals(poc.getData_postagem()) && 
+            if(p.getDataPostagem().equals(poc.getDataPostagem()) && 
                     p.getTitulo().equals(poc.getTitulo())){
                 return p;
             }
@@ -38,12 +38,12 @@ public class POCDAO {
     public POC pesquisarAutor(String autor){  
         for(POC p : pocs){
             
-            if(p.getLista_de_autores().equals(autor)){
-                 System.out.println(p.getLista_de_autores());
+            if(p.getListaDeAutores().equals(autor)){
+                 System.out.println(p.getListaDeAutores());
                  System.out.println("bodsaodl");
                 return p;
             }
-            System.out.println(p.getLista_de_autores());
+            System.out.println(p.getListaDeAutores());
            
         }
         System.out.println(autor);
@@ -95,7 +95,7 @@ public class POCDAO {
     public POC pesquisarAno(String ano){
          for(POC p : pocs){
             
-            if(p.getData_postagem().equals(ano)){
+            if(p.getDataPostagem().equals(ano)){
                 return p;
             }
         }
