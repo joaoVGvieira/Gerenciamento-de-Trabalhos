@@ -28,4 +28,33 @@ public class InterfaceAluno {
         System.out.println("Matricula: " + alunoLogado.getMatricula());
         System.out.println("Senha: " + alunoLogado.getSenha());
     }
+    
+    public int lerOpcao(){
+         int opcao;
+         Scanner s = new Scanner(System.in);
+         opcao = s.nextInt();
+         return opcao;
+    }
+    
+    public Aluno lerLoginAluno(){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Matricula: ");
+        String mat = s.next();
+        System.out.print("Senha: ");
+        String senha = s.next();
+        Aluno a = new Aluno(null, mat, senha, TipoUsuario.ALUNO);
+        return a;
+    }
+    
+    public Aluno cadastrarAluno(){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Nome: ");
+        String Nome = s.next();
+        System.out.print("Matricula: ");
+        String mat = s.next();
+        System.out.print("Senha: ");
+        String senha = s.next();
+        Aluno a = new Aluno(Nome, mat, senha, TipoUsuario.ALUNO);
+        return a;
+    }
 }
