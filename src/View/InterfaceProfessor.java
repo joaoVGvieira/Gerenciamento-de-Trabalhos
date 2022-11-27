@@ -25,8 +25,20 @@ public class InterfaceProfessor {
         System.out.println("6- Voltar");
         System.out.println("-------------------------------");
     }
+    public void opcaoPesquisa(){ 
+        System.out.println("-------------------------------");
+        System.out.println("1- Pesquisar por Autores");
+        System.out.println("2- Pesquisar por Orientador");
+        System.out.println("3- Pesquisar por resumo");
+        System.out.println("4- Pesquisar por Area");
+        System.out.println("5- Pesquisar por Título");
+        System.out.println("6- Pesquisar por Ano");
+        System.out.println("7- Voltar");
+        System.out.println("-------------------------------");
+        
+    }
     
-    public void Opcao1(){ //TODO
+    public void cadastrarPOC(){ //TODO
         Scanner s = new Scanner(System.in);
         s.nextLine();
         System.out.println("Titulo: ");
@@ -64,7 +76,7 @@ public class InterfaceProfessor {
     
     }
     
-    public void Opcao2(){ //TODO
+    public void pesquisarPOC(){ //TODO
         Scanner s = new Scanner(System.in);
         int acao;
         do{
@@ -174,27 +186,24 @@ public class InterfaceProfessor {
 
     }
     
-    public void opcaoPesquisa(){ 
-        System.out.println("-------------------------------");
-        System.out.println("1- Pesquisar por Autores");
-        System.out.println("2- Pesquisar por Orientador");
-        System.out.println("3- Pesquisar por resumo");
-        System.out.println("4- Pesquisar por Area");
-        System.out.println("5- Pesquisar por Título");
-        System.out.println("6- Pesquisar por Ano");
-        System.out.println("7- Voltar");
-        System.out.println("-------------------------------");
+    
+    
+    public void editarPOC(){ //TODO
         
     }
     
-    public void mostrarOpcao3(){ //TODO
-        
+    public void removerPOC(){ //TODO
+        if(Context.pocDAO.getPOC() == null){
+            System.out.println("Nao ha POCs cadastrados");
+        }
+        else{
+            Scanner s = new Scanner(System.in);
+            System.out.println("Digite o titulo do POC que deseja remover: ");
+            String titulo = s.next();
+            Context.pocDAO.removerPOC(titulo);
+        }
     }
-    
-    public void mostrarOpcao4(){ //TODO
-        
-    }
-    public void mostrarOpcao5(){ //TODO
+    public void mudarSenhaPOC(){ //TODO
         
     }
     

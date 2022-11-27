@@ -93,23 +93,23 @@ public class InterfaceLogar {
                              acao = Ip.lerOpcao();
                             //CADASTRAR POC
                             if (acao == 1) {
-                                Ip.Opcao1();
+                                Ip.cadastrarPOC();
                             }
                             //PESQUISAR POC
                             else if(acao == 2){
-                                Ip.Opcao2();
+                                Ip.pesquisarPOC();
                             }
                             //EDITAR POC
                             else if(acao == 3){
-                                Ip.mostrarOpcao3();
+                                Ip.editarPOC();
                             }
                             //REMOVER POC
                             else if(acao==4){
-                                Ip.mostrarOpcao4();
+                                Ip.removerPOC();
                             }
                             //MUDAR SENHA
                             else if(acao == 5){
-                                Ip.mostrarOpcao5();
+                                Ip.mudarSenhaPOC();
                             }
                             else if(acao == 6){
                                 break;

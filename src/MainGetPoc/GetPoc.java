@@ -6,9 +6,7 @@ import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
 import View.InterfaceLogar;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  *

@@ -103,5 +103,21 @@ public class POCDAO {
         return resultado;
     }
 
+    public void removerPOC(String titulo){
+        ArrayList<POC> resultado = pesquisarTitulo(titulo);
+        if(resultado.size() == 0){
+            System.out.println("Nenhum resultado encontrado");
+        }
+        else{
+            for(POC p : resultado){
+                System.out.println("Removendo POC: ");
+                p.printar();
+                pocs.remove(p);
+            }
+       }
+        
+        
+    }
+
    
 }
