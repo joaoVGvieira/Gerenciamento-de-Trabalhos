@@ -37,6 +37,18 @@ public class InterfaceProfessor {
         System.out.println("-------------------------------");
         
     }
+
+    public void opcaoAlterarPOC(){
+        System.out.println("-------------------------------");
+        System.out.println("1- Alterar Autores");
+        System.out.println("2- Alterar Orientador");
+        System.out.println("3- Alterar resumo");
+        System.out.println("4- Alterar Area");
+        System.out.println("5- Alterar Título");
+        System.out.println("6- Alterar Data-Postagem");
+        System.out.println("7- Voltar");
+        System.out.println("-------------------------------");
+    }
     
     public void cadastrarPOC(){ //TODO
         Scanner s = new Scanner(System.in);
@@ -189,7 +201,93 @@ public class InterfaceProfessor {
     
     
     public void editarPOC(){ //TODO
+        Scanner s = new Scanner(System.in);
+        System.out.println("Digite o Titulo do POC que deseja alterar: ");
+        String tituloAlt = s.next();
+        System.out.println("Digite o ano da postagem da POC que deseja alterar: ");
+        int ano_postagem = s.nextInt();
+
+        ArrayList<POC> resultadoTitulo = Context.pocDAO.pesquisarTitulo(tituloAlt);
+        ArrayList<POC> resultadoAno = Context.pocDAO.pesquisarAno(ano_postagem);
+
+        POC alteracao = null;
+        int encontrada = 0;
+        for(POC p1 :resultadoTitulo){
+            for(POC p2 : resultadoAno){
+                if(p1 == p2){
+                    System.out.println("POC encontrada");
+                    p1.printar();
+                    alteracao = p1;
+                    encontrada = 1;
+                }
+                
+            }
+        }
+        if(encontrada == 0){
+            System.out.println("POC não encontrada");
+            return;
+        }
         
+        int acao;
+        do{
+            this.opcaoAlterarPOC();
+            acao = this.lerOpcao();
+            
+            //AUTHOR
+            if (acao == 1) {
+                System.out.println("Digite os novos nomes dos autores: ");
+                String autores = s.next();
+                alteracao.setListaDeAutores(autores);
+                System.out.println("Alteração realizada com sucesso");                
+            }
+
+            //ORIENTADOR
+            else if (acao == 2) {
+                System.out.println("Digite o nome do novo orientador: ");
+                String orientador = s.next();
+                alteracao.setOrientador(orientador);
+                System.out.println("Alteração realizada com sucesso");    
+            
+            //RESUMO
+            } else if (acao == 3) {
+                System.out.println("Digite o novo resumo: ");
+                String resumo = s.next();
+                alteracao.setResumo(resumo);
+                System.out.println("Alteração realizada com sucesso");
+
+            //AREA  
+            } else if (acao == 4) {
+                System.out.println("Digite a nova área da POC: ");
+                String area = s.next();
+                alteracao.setArea(area);
+                System.out.println("Alteração realizada com sucesso");
+            }
+            //TITULO
+            else if (acao == 5) {
+                System.out.println("Digite o novo titulo da POC: ");
+                String titulo = s.next();
+                alteracao.setTitulo(titulo);
+                System.out.println("Alteração realizada com sucesso");
+            }   
+            //ANO
+            else if (acao == 6) {
+                System.out.println("Digite a nova data do POC(dd/mm/yyyy): ");
+                int novaData = s.nextInt();
+                s.nextLine();
+                int dia = Integer.parseInt(Integer.toString(novaData).substring(0, 2));
+                int mes = Integer.parseInt(Integer.toString(novaData).substring(3, 5));
+                int ano = Integer.parseInt(Integer.toString(novaData).substring(6, 10));
+                LocalDate dataNova = LocalDate.of(ano, mes, dia);
+                alteracao.setDataPostagem(dataNova);
+                System.out.println("Alteração realizada com sucesso");
+            }
+            else if (acao == 7) {
+                break;
+            } else {
+                System.out.println("Opcao Invalida!!!");
+            }
+
+        } while (acao != 7);
     }
     
     public void removerPOC(){ //TODO
