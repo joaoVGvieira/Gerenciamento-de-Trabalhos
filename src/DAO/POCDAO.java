@@ -47,54 +47,59 @@ public class POCDAO {
     }
      
     
-    public POC pesquisarOrientador(String orientador){
+    public ArrayList<POC> pesquisarOrientador(String orientador){
+        ArrayList<POC> resultado = new ArrayList<>();
         for(POC p : pocs){
-            if(p.getOrientador().equals(orientador)){
-                return p;
+            if(p.getOrientador().contains(orientador)){
+                resultado.add(p);
             }
         }
-        return null;
+        return resultado;
     }
     
  
-    public POC pesquisarResumo(String resumo){
+    public ArrayList<POC> pesquisarResumo(String resumo){
+        ArrayList<POC> resultado = new ArrayList<>();
         for(POC p : pocs){
             
-            if(p.getResumo().equals(resumo)){
-                return p;
+            if(p.getResumo().contains(resumo)){
+                resultado.add(p);
             }
+            
         }
-        return null;
+        return resultado;
     }
     
     public POC pesquisarArea(String area){
          for(POC p : pocs){
             
-            if(p.getArea().equals(area)){
+            if(p.getArea().contains(area)){
                 return p;
             }
         }
         return null;
     }
     
-    public POC pesquisarTitulo(String titulo){
-         for(POC p : pocs){
+    public ArrayList<POC> pesquisarTitulo(String titulo){
+        ArrayList<POC> resultado = new ArrayList<>();
+        for(POC p : pocs){
             
-            if(p.getTitulo().equals(titulo)){
-                return p;
+            if(p.getTitulo().contains(titulo)){
+                resultado.add(p);
             }
         }
-        return null;
+        return resultado;
     }
     
-    public POC pesquisarAno(String ano){
-         for(POC p : pocs){
+    public ArrayList<POC> pesquisarAno(int ano){
+        ArrayList<POC> resultado = new ArrayList<>();
+        for(POC p : pocs){
             
-            if(p.getDataPostagem().equals(ano)){
-                return p;
+            if(p.getDataPostagem().getYear() == ano){
+                resultado.add(p);
             }
         }
-        return null;
+        return resultado;
     }
 
    

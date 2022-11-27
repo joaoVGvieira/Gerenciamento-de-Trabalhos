@@ -9,6 +9,7 @@ import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,8 +39,8 @@ public class InterfaceProfessor {
         System.out.println("Co-orientador: ");
         String coOrientador = s.next();
         s.nextLine();
-        System.out.println("Data de postagem: ");
-        String data_postagem = s.next();
+        System.out.println("Data de postagem(dd/mm/yyyy): ");
+        int data_postagem = s.nextInt();
         s.nextLine();
         System.out.println("Palavras-chave: ");
         String palavras_chave = s.nextLine();
@@ -53,7 +54,12 @@ public class InterfaceProfessor {
         System.out.println("Caminho do PDF: ");
         String caminhoPDF = s.next();
         s.nextLine();
-        POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, data_postagem, palavras_chave, resumo, area, caminhoPDF);
+
+        int dia = Integer.parseInt(Integer.toString(data_postagem).substring(0, 2));
+        int mes = Integer.parseInt(Integer.toString(data_postagem).substring(3, 5));
+        int ano = Integer.parseInt(Integer.toString(data_postagem).substring(6, 10));
+        
+        POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, LocalDate.of(ano, mes, dia) , palavras_chave, resumo, area, caminhoPDF);
         Context.pocController.CadastrarPOC(p);
     
     }
@@ -85,53 +91,79 @@ public class InterfaceProfessor {
             else if (acao == 2) {
                 System.out.println("Digite o nome do orientador: ");
                 String orientadorr = s.next();
-                if (Context.pocDAO.pesquisarOrientador(orientadorr) == null) {
-                    System.out.println();
-                    System.out.println("POC nao encontrado!");
-                } else {
-                    Context.pocDAO.pesquisarOrientador(orientadorr).printar();
-                }
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(orientadorr);
 
+                if(resultado.size() == 0){
+                    System.out.println("Nenhum resultado encontrado");
+                }
+                else{
+                    for(POC p : resultado){
+                        p.printar();
+                    }
+                }
+            
+            //RESUMO
             } else if (acao == 3) {
                 System.out.println("Digite o resumo: ");
                 String resumoo = s.next();
-                if (Context.pocDAO.pesquisarResumo(resumoo) == null) {
-                    System.out.println();
-                    System.out.println("POC nao encontrado!");
-                } else {
-                    Context.pocDAO.pesquisarResumo(resumoo).printar();
-                }
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(resumoo);
 
+                if(resultado.size() == 0){
+                    System.out.println("Nenhum resultado encontrado");
+                }
+                else{
+                    for(POC p : resultado){
+                        p.printar();
+                    }
+                }
+            
+
+            //AREA  
             } else if (acao == 4) {
                 System.out.println("Digite a area: ");
                 String areaa = s.next();
-                if (Context.pocDAO.pesquisarArea(areaa) == null) {
-                    System.out.println();
-                    System.out.println("POC nao encontrado!");
-                } else {
-                    Context.pocDAO.pesquisarArea(areaa).printar();
-                }
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(areaa);
 
-            } else if (acao == 5) {
+                if(resultado.size() == 0){
+                    System.out.println("Nenhum resultado encontrado");
+                }
+                else{
+                    for(POC p : resultado){
+                        p.printar();
+                    }
+                }
+            }
+            //TITULO
+            else if (acao == 5) {
                 System.out.println("Digite o titulo: ");
                 String tituloo = s.next();
-                if (Context.pocDAO.pesquisarTitulo(tituloo) == null) {
-                    System.out.println();
-                    System.out.println("POC nao encontrado!");
-                } else {
-                    Context.pocDAO.pesquisarTitulo(tituloo).printar();
-                }
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(tituloo);
 
-            } else if (acao == 6) {
-                System.out.println("Digite o ano: ");
-                String anoo = s.next();
-                if (Context.pocDAO.pesquisarAno(anoo) == null) {
-                    System.out.println();
-                    System.out.println("POC nao encontrado!");
-                } else {
-                    Context.pocDAO.pesquisarAno(anoo).printar();
+                if(resultado.size() == 0){
+                    System.out.println("Nenhum resultado encontrado");
                 }
-            } else if (acao == 7) {
+                else{
+                    for(POC p : resultado){
+                        p.printar();
+                    }
+                }
+            }   
+            //ANO
+            else if (acao == 6) {
+                System.out.println("Digite o ano: ");
+                int anoo = s.nextInt();
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarAno(anoo);
+
+                if(resultado.size() == 0){
+                    System.out.println("Nenhum resultado encontrado");
+                }
+                else{
+                    for(POC p : resultado){
+                        p.printar();
+                    }
+                }
+            }
+            else if (acao == 7) {
                 break;
             } else {
                 System.out.println("Opcao Invalida!!!");

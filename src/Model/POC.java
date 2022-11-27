@@ -4,6 +4,10 @@
  */
 package Model;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  *
  */
@@ -15,7 +19,7 @@ public class POC {
     private String listaDeAutores;
     private String orientador;
     private String coOrientador;
-    private String dataPostagem;
+    private LocalDate dataPostagem;
     private String[] palavrasChave;
     private String resumo;
     private String area;
@@ -24,12 +28,12 @@ public class POC {
 
     
 
-    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, String dataPostagem, String palavrasChave, String resumo, String area, String caminhoPDF) {
+    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, LocalDate data, String palavrasChave, String resumo, String area, String caminhoPDF) {
         this.titulo = titulo;
         this.listaDeAutores = listaDeAutores;
         this.orientador = orientador;
         this.coOrientador = coOrientador;
-        this.dataPostagem = dataPostagem;
+        this.dataPostagem = data;
         this.palavrasChave = palavrasChave.split(" "); // Separar as palavras chave por espaço
         this.resumo = resumo;
         this.area = area;
@@ -64,7 +68,7 @@ public class POC {
         this.resumo = resumo;
     }
 
-    public void setDataPostagem(String dataPostagem) {
+    public void setDataPostagem(LocalDate dataPostagem) {
         this.dataPostagem = dataPostagem;
     }
 
@@ -76,7 +80,7 @@ public class POC {
         return area;
     }
 
-    public String getDataPostagem() {
+    public LocalDate getDataPostagem() {
         return this.dataPostagem;
     }
 
