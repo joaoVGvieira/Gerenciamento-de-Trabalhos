@@ -91,7 +91,7 @@ public class InterfaceProfessor {
             else if (acao == 2) {
                 System.out.println("Digite o nome do orientador: ");
                 String orientadorr = s.next();
-                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(orientadorr);
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarOrientador(orientadorr);
 
                 if(resultado.size() == 0){
                     System.out.println("Nenhum resultado encontrado");
@@ -106,7 +106,7 @@ public class InterfaceProfessor {
             } else if (acao == 3) {
                 System.out.println("Digite o resumo: ");
                 String resumoo = s.next();
-                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(resumoo);
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarResumo(resumoo);
 
                 if(resultado.size() == 0){
                     System.out.println("Nenhum resultado encontrado");
@@ -122,7 +122,7 @@ public class InterfaceProfessor {
             } else if (acao == 4) {
                 System.out.println("Digite a area: ");
                 String areaa = s.next();
-                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(areaa);
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarArea(areaa);
 
                 if(resultado.size() == 0){
                     System.out.println("Nenhum resultado encontrado");
@@ -137,7 +137,7 @@ public class InterfaceProfessor {
             else if (acao == 5) {
                 System.out.println("Digite o titulo: ");
                 String tituloo = s.next();
-                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(tituloo);
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarTitulo(tituloo);
 
                 if(resultado.size() == 0){
                     System.out.println("Nenhum resultado encontrado");

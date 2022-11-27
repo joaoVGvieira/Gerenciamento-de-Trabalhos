@@ -70,14 +70,15 @@ public class POCDAO {
         return resultado;
     }
     
-    public POC pesquisarArea(String area){
-         for(POC p : pocs){
+    public ArrayList<POC> pesquisarArea(String area){
+        ArrayList<POC> resultado = new ArrayList<>();
+        for(POC p : pocs){
             
             if(p.getArea().contains(area)){
-                return p;
+                resultado.add(p);
             }
         }
-        return null;
+        return resultado;
     }
     
     public ArrayList<POC> pesquisarTitulo(String titulo){
