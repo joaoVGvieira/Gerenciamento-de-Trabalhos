@@ -16,17 +16,17 @@ public class InterfaceLogar {
 
     public void mostrarOpcoesIniciais() {
         System.out.println("----GetPoc----");
-        System.out.println("1- Logar");
-        System.out.println("2- Cadastrar");
-        System.out.println("3- Sair");
+        System.out.println("1 - Logar");
+        System.out.println("2 - Cadastrar");
+        System.out.println("3 - Sair");
     }
 
     public void mostrarOpcaoLogar() {
         System.out.println("\n---------\n");
         System.out.println("Voce é:");
-        System.out.println("1- Aluno");
-        System.out.println("2- Professor");
-        System.out.println("4- Voltar");
+        System.out.println("1 - Aluno");
+        System.out.println("2 - Professor");
+        System.out.println("3 - Voltar");
     }
 
  
@@ -126,7 +126,7 @@ public class InterfaceLogar {
                     }
                 }    
                 //VOLTAR
-                else if(opcao == 4){
+                else if(opcao == 3){
                     this.exibirInterface();
                 }
                 else{
@@ -148,7 +148,8 @@ public class InterfaceLogar {
                 }
                 else if (opcao == 2) {
                     if (Context.professorController.cadastrarProfessor(Ip.cadastrarProfessor()) == true) {
-                          System.out.println("Professor Cadastrado!!!");
+
+                        System.out.println("Professor Cadastrado!!!");
 
                     } else {
                         System.out.println("Professor não cadastrado.");

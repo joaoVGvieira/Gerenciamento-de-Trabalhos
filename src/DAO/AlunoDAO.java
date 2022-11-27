@@ -16,7 +16,7 @@ public class AlunoDAO {
     }
     
     public void adicionarAluno(Aluno a){
-            alunos.add(a);
+        alunos.add(a);
 
     }
     

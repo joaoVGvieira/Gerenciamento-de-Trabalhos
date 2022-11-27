@@ -38,12 +38,12 @@ public class POCDAO {
     public POC pesquisarAutor(String autor){  
         for(POC p : pocs){
             
+            System.out.println(p.getListaDeAutores());
+            System.out.println("Entrou");
             if(p.getListaDeAutores().equals(autor)){
-                 System.out.println(p.getListaDeAutores());
-                 System.out.println("bodsaodl");
+                System.out.println("bodsaodl");
                 return p;
             }
-            System.out.println(p.getListaDeAutores());
            
         }
         System.out.println(autor);
