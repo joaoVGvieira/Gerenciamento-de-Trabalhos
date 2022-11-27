@@ -22,7 +22,7 @@ public class InterfaceLogar {
     }
 
     public void mostrarOpcaoLogar() {
-        System.out.println("\n---------\n");
+        System.out.println("---------\n");
         System.out.println("Voce é:");
         System.out.println("1 - Aluno");
         System.out.println("2 - Professor");

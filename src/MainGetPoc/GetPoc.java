@@ -32,15 +32,15 @@ public class GetPoc {
         Context.professorDAO.adicionarProfessor(e);
 
         
-        POC p = new POC("Titulo1", "Autor1, Autor2", "Fabricio", "Daniel", 
+        POC p = new POC("Titulo1", "Autor1 Autor2", "Fabricio", "Daniel", 
                 "01012022", "Primeiro POC","ABW", "CDC", "KJNJFDJHNJÇKJ");
         Context.pocController.CadastrarPOC(p);
 
-        POC q = new POC("Titulo2", "Autor2, Autor3", "Daniel", "Thais", 
+        POC q = new POC("Titulo2", "Autor2 Autor3", "Daniel", "Thais", 
                 "03012022", "Segundo POC","wba", "COMPUTAÇÃO", "KJNJFDJHNJJFHUHHÇKJ");
         Context.pocController.CadastrarPOC(q);
 
-        POC s = new POC("Titulo3", "Autor3, Autor1", "Fabricio", "Marcus", 
+        POC s = new POC("Titulo3", "Autor3 Autor1", "Fabricio", "Marcus", 
                 "26112022", "Terceiro POC","ABWjhbjhb", "EXATAS", "KJkldsjfiuhdfiNJFDJHNJÇKJ");
         Context.pocController.CadastrarPOC(s);
 

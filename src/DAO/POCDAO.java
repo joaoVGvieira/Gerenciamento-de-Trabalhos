@@ -35,19 +35,14 @@ public class POCDAO {
         return null;
     }
     
-    public POC pesquisarAutor(String autor){  
+    public ArrayList<POC> pesquisarAutor(String autor){;
+        ArrayList<POC> resultado = new ArrayList<>();
         for(POC p : pocs){
-            
-            System.out.println(p.getListaDeAutores());
-            System.out.println("Entrou");
-            if(p.getListaDeAutores().equals(autor)){
-                System.out.println("bodsaodl");
-                return p;
+            if(p.getListaDeAutores().contains(autor)){
+                resultado.add(p);
             }
-           
         }
-        System.out.println(autor);
-        return null;
+        return resultado;
 
     }
      

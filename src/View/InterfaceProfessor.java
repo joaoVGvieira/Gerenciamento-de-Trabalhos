@@ -8,6 +8,8 @@ import Model.Aluno;
 import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InterfaceProfessor {
@@ -53,6 +55,7 @@ public class InterfaceProfessor {
         s.nextLine();
         POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, data_postagem, palavras_chave, resumo, area, caminhoPDF);
         Context.pocController.CadastrarPOC(p);
+    
     }
     
     public void Opcao2(){ //TODO
@@ -61,12 +64,25 @@ public class InterfaceProfessor {
         do{
             this.opcaoPesquisa();
             acao = this.lerOpcao();
+            //AUTHOR
             if (acao == 1) {
                 System.out.println("Digite o nome do autor: ");
                 String autores = s.next();
-                Context.pocDAO.pesquisarAutor(autores);
+                ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(autores);
 
-            } else if (acao == 2) {
+                if(resultado.size() == 0){
+                    System.out.println("Nenhum resultado encontrado");
+                }
+                else{
+                    for(POC p : resultado){
+                        p.printar();
+                    }
+                }
+                
+            }
+
+            //ORIENTADOR
+            else if (acao == 2) {
                 System.out.println("Digite o nome do orientador: ");
                 String orientadorr = s.next();
                 if (Context.pocDAO.pesquisarOrientador(orientadorr) == null) {
@@ -122,10 +138,12 @@ public class InterfaceProfessor {
             }
 
         } while (acao != 7);
+        
 
     }
     
     public void opcaoPesquisa(){ 
+        System.out.println("-------------------------------");
         System.out.println("1- Pesquisar por Autores");
         System.out.println("2- Pesquisar por Orientador");
         System.out.println("3- Pesquisar por resumo");
@@ -133,6 +151,7 @@ public class InterfaceProfessor {
         System.out.println("5- Pesquisar por Título");
         System.out.println("6- Pesquisar por Ano");
         System.out.println("7- Voltar");
+        System.out.println("-------------------------------");
         
     }
     
@@ -158,10 +177,10 @@ public class InterfaceProfessor {
     }
     
     public int lerOpcao(){
-         int opcao;
-         Scanner s = new Scanner(System.in);
-         opcao = s.nextInt();
-         return opcao;
+        int opcao;
+        Scanner s = new Scanner(System.in);
+        opcao = s.nextInt();
+        return opcao;
     }
     
     public Professor cadastrarProfessor(){
@@ -180,5 +199,6 @@ public class InterfaceProfessor {
             b.setIsAdm(true);
         }
         return b;
+        
     }
 }

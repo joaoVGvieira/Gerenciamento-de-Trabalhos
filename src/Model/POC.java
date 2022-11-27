@@ -12,7 +12,7 @@ public class POC {
     
     //TODO adicionar usuario que fez o cadastro do POC
     private String titulo;
-    private String[] listaDeAutores;
+    private String listaDeAutores;
     private String orientador;
     private String coOrientador;
     private String dataPostagem;
@@ -26,7 +26,7 @@ public class POC {
 
     public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, String dataPostagem, String palavrasChave, String resumo, String area, String caminhoPDF) {
         this.titulo = titulo;
-        this.listaDeAutores = listaDeAutores.split(","); // Separar os nomes por vírgula
+        this.listaDeAutores = listaDeAutores;
         this.orientador = orientador;
         this.coOrientador = coOrientador;
         this.dataPostagem = dataPostagem;
@@ -41,7 +41,7 @@ public class POC {
     }
 
     public void setListaDeAutores(String listaDeAutores) {
-        this.listaDeAutores = listaDeAutores.split(",");
+        this.listaDeAutores = listaDeAutores;
     }
 
     public void setOrientador(String orientador) {
@@ -80,7 +80,7 @@ public class POC {
         return this.dataPostagem;
     }
 
-    public String[] getListaDeAutores() {
+    public String getListaDeAutores() {
         return listaDeAutores;
     }
 
@@ -109,12 +109,9 @@ public class POC {
     }
     
     public void printar(){
-        System.out.println();
+        System.out.println(".................................");
         System.out.println("Titulo: " + this.titulo);
-        System.out.print("Lista de autores: ");
-        for (String lista_de_autore : this.listaDeAutores) {
-            System.out.print(listaDeAutores + " ");
-        }
+        System.out.print("Lista de autores: " + getListaDeAutores());
         System.out.println("\nOrientador: " + this.orientador);
         System.out.println("Co-orientador: " + this.coOrientador);
         System.out.println("Data da postagem: " + this.dataPostagem);
@@ -125,7 +122,7 @@ public class POC {
         System.out.println("\nResumo: " + this.resumo);
         System.out.println("Area: " + this.area);
         System.out.println("Caminho PDF: " + this.caminhoPDF);
-        System.out.println();
+        System.out.println(".................................");
     }
     
 }
