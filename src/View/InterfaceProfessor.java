@@ -40,19 +40,22 @@ public class InterfaceProfessor {
 
     public void opcaoAlterarPOC(){
         System.out.println("-------------------------------");
-        System.out.println("1- Alterar Autores");
-        System.out.println("2- Alterar Orientador");
-        System.out.println("3- Alterar resumo");
-        System.out.println("4- Alterar Area");
-        System.out.println("5- Alterar Título");
-        System.out.println("6- Alterar Data-Postagem");
-        System.out.println("7- Voltar");
+        System.out.println("1 - Alterar Autores");
+        System.out.println("2 - Alterar Orientador");
+        System.out.println("3 - Alterar resumo");
+        System.out.println("4 - Alterar Area");
+        System.out.println("5 - Alterar Título");
+        System.out.println("6 - Alterar Data-Postagem");
+        System.out.println("7 - Alterar Co-Orientador");
+        System.out.println("8 - Alterar Palavras-Chave");
+        System.out.println("9 - Alterar Caminho PDF");
+        System.out.println("10 - Voltar");
         System.out.println("-------------------------------");
     }
     
     public void cadastrarPOC(){ //TODO
         Scanner s = new Scanner(System.in);
-        s.nextLine();
+        //s.nextLine();
         System.out.println("Titulo: ");
         String titulo = s.nextLine();
         System.out.println("Lista de autores: ");
@@ -64,7 +67,7 @@ public class InterfaceProfessor {
         String coOrientador = s.next();
         s.nextLine();
         System.out.println("Data de postagem(dd/mm/yyyy): ");
-        int data_postagem = s.nextInt();
+        String data_postagem = s.next();
         s.nextLine();
         System.out.println("Palavras-chave: ");
         String palavras_chave = s.nextLine();
@@ -79,9 +82,9 @@ public class InterfaceProfessor {
         String caminhoPDF = s.next();
         s.nextLine();
 
-        int dia = Integer.parseInt(Integer.toString(data_postagem).substring(0, 2));
-        int mes = Integer.parseInt(Integer.toString(data_postagem).substring(3, 5));
-        int ano = Integer.parseInt(Integer.toString(data_postagem).substring(6, 10));
+        int dia = Integer.parseInt(data_postagem.substring(0, 2));
+        int mes = Integer.parseInt(data_postagem.substring(3, 5));
+        int ano = Integer.parseInt(data_postagem.substring(6, 10));
         
         POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, LocalDate.of(ano, mes, dia) , palavras_chave, resumo, area, caminhoPDF);
         Context.pocController.CadastrarPOC(p);
@@ -272,22 +275,46 @@ public class InterfaceProfessor {
             //ANO
             else if (acao == 6) {
                 System.out.println("Digite a nova data do POC(dd/mm/yyyy): ");
-                int novaData = s.nextInt();
+                String novaData = s.next();
                 s.nextLine();
-                int dia = Integer.parseInt(Integer.toString(novaData).substring(0, 2));
-                int mes = Integer.parseInt(Integer.toString(novaData).substring(3, 5));
-                int ano = Integer.parseInt(Integer.toString(novaData).substring(6, 10));
+                int dia = Integer.parseInt(novaData.substring(0, 2));
+                int mes = Integer.parseInt(novaData.substring(3, 5));
+                int ano = Integer.parseInt(novaData.substring(6, 10));
                 LocalDate dataNova = LocalDate.of(ano, mes, dia);
                 alteracao.setDataPostagem(dataNova);
                 System.out.println("Alteração realizada com sucesso");
             }
-            else if (acao == 7) {
+            //CO-ORIENTADOR
+            else if(acao == 7){
+                System.out.println("Digite o novo co-orientador da POC: ");
+                String coorientador = s.next();
+                alteracao.setCoOrientador(coorientador);
+                System.out.println("Alteração realizada com sucesso");
+                
+            }
+            //PALAVRAS-CHAVE
+            else if(acao == 8){
+                System.out.println("Digite as novas palavras-chave da POC: ");
+                String palavrasChave = s.next();
+                alteracao.setPalavrasChave(palavrasChave);
+                System.out.println("Alteração realizada com sucesso");
+                
+            }
+            //CAMINHO PDF
+            else if(acao == 9){
+                System.out.println("Digite o novo caminho do PDF da POC: ");
+                String caminhoPDF = s.next();
+                alteracao.setCaminhoPDF(caminhoPDF);
+                System.out.println("Alteração realizada com sucesso");
+                
+            }
+            else if (acao == 10) {
                 break;
             } else {
                 System.out.println("Opcao Invalida!!!");
             }
 
-        } while (acao != 7);
+        } while (acao != 10);
     }
     
     public void removerPOC(){ //TODO
