@@ -21,8 +21,7 @@ public class InterfaceProfessor {
         System.out.println("2- Pesquisar POC");
         System.out.println("3- Editar POC");
         System.out.println("4- Remover POC");
-        System.out.println("5- Mudar senha de usuario");
-        System.out.println("6- Voltar");
+        System.out.println("5- Voltar");
         System.out.println("-------------------------------");
     }
     public void opcaoPesquisa(){ 
@@ -329,9 +328,6 @@ public class InterfaceProfessor {
             String titulo = s.next();
             Context.pocDAO.removerPOC(titulo);
         }
-    }
-    public void mudarSenhaPOC(){ //TODO
-        
     }
     
     public Professor lerLoginProfessor(){

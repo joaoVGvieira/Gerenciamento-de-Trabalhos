@@ -107,19 +107,15 @@ public class InterfaceLogar {
                             else if(acao==4){
                                 Ip.removerPOC();
                             }
-                            //MUDAR SENHA
+                            //VOLTAR
                             else if(acao == 5){
-                                Ip.mudarSenhaPOC();
-                            }
-                            else if(acao == 6){
                                 break;
                             }
-                            //VOLTAR
                             else{
                                 System.out.println("opcao invalida!!!");
                             }
                             
-                        }while(acao!=6);
+                        }while(acao!=5);
                     }    
                     else {
                         System.out.println("Professor não cadastrado.");
