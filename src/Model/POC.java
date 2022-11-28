@@ -21,11 +21,12 @@ public class POC {
     private String resumo;
     private String area;
     private String caminhoPDF;
+    private String usuarioCadastro;
     
 
     
 
-    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, LocalDate data, String palavrasChave, String resumo, String area, String caminhoPDF) {
+    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, LocalDate data, String palavrasChave, String resumo, String area, String caminhoPDF, String usuarioCadastro) {
         this.titulo = titulo;
         this.listaDeAutores = listaDeAutores;
         this.orientador = orientador;
@@ -35,6 +36,7 @@ public class POC {
         this.resumo = resumo;
         this.area = area;
         this.caminhoPDF = caminhoPDF;
+        this.usuarioCadastro = usuarioCadastro;
     }
 
     public void setArea(String area) {
@@ -123,7 +125,9 @@ public class POC {
         System.out.println("\nResumo: " + this.resumo);
         System.out.println("Area: " + this.area);
         System.out.println("Caminho PDF: " + this.caminhoPDF);
+        //System.out.println("Usuário que cadastrou: " + this.usuarioCadastro); //Não necessário printar
         System.out.println(".................................");
+        
     }
     
 }

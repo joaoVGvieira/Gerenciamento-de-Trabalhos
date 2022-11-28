@@ -82,11 +82,13 @@ public class InterfaceProfessor {
         String caminhoPDF = s.next();
         s.nextLine();
 
+        String usuarioCadastro = Context.professorLogado.getMatricula();
+
         int dia = Integer.parseInt(data_postagem.substring(0, 2));
         int mes = Integer.parseInt(data_postagem.substring(3, 5));
         int ano = Integer.parseInt(data_postagem.substring(6, 10));
         
-        POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, LocalDate.of(ano, mes, dia) , palavras_chave, resumo, area, caminhoPDF);
+        POC p = new POC(titulo, lista_de_autores, orientador, coOrientador, LocalDate.of(ano, mes, dia) , palavras_chave, resumo, area, caminhoPDF, usuarioCadastro);
         Context.pocController.CadastrarPOC(p);
     
     }

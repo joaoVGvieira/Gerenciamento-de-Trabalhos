@@ -34,15 +34,15 @@ public class GetPoc {
 
         
         POC p = new POC("Titulo1", "Autor1 Autor2", "Fabricio", "Daniel", 
-                LocalDate.of(2022, 01, 01), "Primeiro POC","ABW", "CDC", "KJNJFDJHNJÇKJ");
+                LocalDate.of(2022, 01, 01), "Primeiro POC","ABW", "CDC", "KJNJFDJHNJÇKJ", "inicial");
         Context.pocController.CadastrarPOC(p);
 
         POC q = new POC("Titulo2", "Autor2 Autor3", "Daniel", "Thais", 
-                LocalDate.of(2022, 01, 03), "Segundo POC","wba", "COMPUTAÇÃO", "KJNJFDJHNJJFHUHHÇKJ");
+                LocalDate.of(2022, 01, 03), "Segundo POC","wba", "COMPUTAÇÃO", "KJNJFDJHNJJFHUHHÇKJ", "inicial");
         Context.pocController.CadastrarPOC(q);
 
         POC s = new POC("Titulo3", "Autor3 Autor1", "Fabricio", "Marcus", 
-                LocalDate.of(2022, 11, 26), "Terceiro POC","ABWjhbjhb", "EXATAS", "KJkldsjfiuhdfiNJFDJHNJÇKJ");
+                LocalDate.of(2022, 11, 26), "Terceiro POC","ABWjhbjhb", "EXATAS", "KJkldsjfiuhdfiNJFDJHNJÇKJ", "inicial");
         Context.pocController.CadastrarPOC(s);
 
 
