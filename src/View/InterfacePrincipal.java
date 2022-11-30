@@ -12,7 +12,7 @@ import java.util.Scanner;
 /**
  *
  */
-public class InterfaceLogar {
+public class InterfacePrincipal {
 
     public void mostrarOpcoesIniciais() {
         System.out.println("----GetPoc----");

@@ -5,7 +5,7 @@ import Model.Aluno;
 import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
-import View.InterfaceLogar;
+import View.InterfacePrincipal;
 import java.time.LocalDate;
 
 /**
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class GetPoc {
 
     public static void main(String[] args) {
-        InterfaceLogar i = new InterfaceLogar();
+        InterfacePrincipal i = new InterfacePrincipal();
         
         
         Aluno b = new Aluno("Cleidimar", "EF03473","passos", TipoUsuario.ALUNO);
