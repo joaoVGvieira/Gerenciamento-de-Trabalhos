@@ -22,7 +22,7 @@ public class Aluno extends Usuario{
 
     @Override
     public boolean matriculaValida() {
-        return (Pattern.matches("^[a-zA-Z]*$", getNome()) && (Pattern.matches("^[0-9]*$", getMatricula())) 
+        return (Pattern.matches("^[a-zA-Z]*$", getNome()) && (getMatricula().matches("E[F|V]\\d\\d\\d\\d\\d")) 
             && (getTipo().equals(TipoUsuario.ALUNO)));
     }    
     
