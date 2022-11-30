@@ -69,9 +69,8 @@ public class InterfaceLogar {
                                     default:
                                         break;
                                 }
-                            }else if(acao == 2){
-                                Aluno aluno = Context.alunoDAO.buscarAluno(i.lerLoginAluno());
-                                 i.mostrarOpcao2(aluno);
+                            }else if(acao == 2){                                
+                                i.mostrarOpcao2(Context.alunoLogado);
                             }else if(acao == 3 ){
                                 break;
                             }
