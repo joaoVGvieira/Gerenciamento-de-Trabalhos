@@ -53,22 +53,7 @@ public class InterfaceLogar {
                             i.mostrarOpcaoAluno();
                              acao = i.lerOpcao();
                             if (acao == 1) {
-                                i.mostrarOpcao1();
-                                acao = i.lerOpcao();
-                                switch (acao) {
-                                    case 1:
-                                        break;
-                                    case 2:
-                                        break;
-                                    case 3:
-                                        break;
-                                    case 4:
-                                        break;
-                                    case 5:
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                Ip.pesquisarPOC();
                             }else if(acao == 2){                                
                                 i.mostrarOpcao2(Context.alunoLogado);
                             }else if(acao == 3 ){
