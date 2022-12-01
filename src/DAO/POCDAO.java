@@ -3,7 +3,11 @@ package DAO;
 
 import Model.Aluno;
 import Model.POC;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -15,10 +19,25 @@ public class POCDAO {
     
     public POCDAO(){
         this.pocs = new ArrayList<>();
+        
+        Queries pegalista =new Queries();
+        
+        try {
+            if(!pegalista.getPOCStb().isEmpty()){
+                this.pocs = pegalista.getPOCStb();
+            }
+                
+        } catch (SQLException ex) {
+            Logger.getLogger(POCDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void adicionarPOC(POC p){
         pocs.add(p);
+        Queries inserepoc = new Queries();
+        
+        inserepoc.InsertPoc(p);
+        
     }
     public POC getPOC(){
         return this.pocs.get(0);

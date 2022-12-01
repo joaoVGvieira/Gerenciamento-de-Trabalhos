@@ -26,7 +26,8 @@ public class POC {
 
     
 
-    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, LocalDate data, String palavrasChave, String resumo, String area, String caminhoPDF, String usuarioCadastro) {
+    public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, LocalDate data,
+            String palavrasChave, String resumo, String area, String caminhoPDF, String usuarioCadastro) {
         this.titulo = titulo;
         this.listaDeAutores = listaDeAutores;
         this.orientador = orientador;
@@ -111,6 +112,9 @@ public class POC {
         return caminhoPDF;
     }
     
+    public String getUsuarioCadastro(){
+        return this.usuarioCadastro;
+    }
     public void printar(){
         System.out.println(".................................");
         System.out.println("Titulo: " + this.titulo);
