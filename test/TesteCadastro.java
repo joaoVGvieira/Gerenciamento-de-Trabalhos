@@ -21,13 +21,13 @@ public class TesteCadastro {
     
     @Test
     public void teste1(){
-        Aluno a = new Aluno("nome", "EF12345","curso", ALUNO);
+        Aluno a = new Aluno("joao", "EF12345","curso", ALUNO);
         assertTrue(a.matriculaValida());        
     }
     
     @Test
     public void teste2(){
-        Aluno a = new Aluno("nome","EV04229","curso", ALUNO);
+        Aluno a = new Aluno("nome joao vieira","EV04229","curso", ALUNO);
         assertTrue(a.matriculaValida());        
     }    
     
