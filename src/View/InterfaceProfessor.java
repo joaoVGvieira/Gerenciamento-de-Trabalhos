@@ -109,7 +109,7 @@ public class InterfaceProfessor {
                 }
                 else{
                     for(POC p : resultado){
-                        p.printar();
+                        System.out.println(p);;
                     }
                 }
                 
@@ -126,7 +126,7 @@ public class InterfaceProfessor {
                 }
                 else{
                     for(POC p : resultado){
-                        p.printar();
+                        System.out.println(p);;
                     }
                 }
             
@@ -141,7 +141,7 @@ public class InterfaceProfessor {
                 }
                 else{
                     for(POC p : resultado){
-                        p.printar();
+                        System.out.println(p);;
                     }
                 }
             
@@ -157,7 +157,7 @@ public class InterfaceProfessor {
                 }
                 else{
                     for(POC p : resultado){
-                        p.printar();
+                        System.out.println(p);;
                     }
                 }
             }
@@ -172,7 +172,7 @@ public class InterfaceProfessor {
                 }
                 else{
                     for(POC p : resultado){
-                        p.printar();
+                        System.out.println(p);
                     }
                 }
             }   
@@ -187,7 +187,7 @@ public class InterfaceProfessor {
                 }
                 else{
                     for(POC p : resultado){
-                        p.printar();
+                        System.out.println(p);
                     }
                 }
             }
@@ -220,7 +220,7 @@ public class InterfaceProfessor {
             for(POC p2 : resultadoAno){
                 if(p1 == p2){
                     System.out.println("POC encontrada");
-                    p1.printar();
+                    System.out.println(p1);
                     alteracao = p1;
                     encontrada = 1;
                 }

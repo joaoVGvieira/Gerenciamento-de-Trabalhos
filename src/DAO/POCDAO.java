@@ -130,7 +130,7 @@ public class POCDAO {
         else{
             for(POC p : resultado){
                 System.out.println("Removendo POC: ");
-                p.printar();
+                System.out.println(p);
                 pocs.remove(p);
             }
        }

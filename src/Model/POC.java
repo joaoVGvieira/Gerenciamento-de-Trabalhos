@@ -4,6 +4,7 @@
  */
 package Model;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,13 +18,13 @@ public class POC {
     private String orientador;
     private String coOrientador;
     private LocalDate dataPostagem;
-    private String[] palavrasChave;
+    private ArrayList<String> palavrasChave;
     private String resumo;
     private String area;
     private String caminhoPDF;
     private String usuarioCadastro;
     
-
+    
     
 
     public POC(String titulo, String listaDeAutores, String orientador, String coOrientador, LocalDate data,
@@ -33,7 +34,13 @@ public class POC {
         this.orientador = orientador;
         this.coOrientador = coOrientador;
         this.dataPostagem = data;
-        this.palavrasChave = palavrasChave.split(" "); // Separar as palavras chave por espaço
+        
+        this.palavrasChave = new ArrayList<>();
+        String[] aux = palavrasChave.split(" "); // Separar as palavras chave por espaço
+        for(String a: aux){
+            this.palavrasChave.add(a);
+        }
+        
         this.resumo = resumo;
         this.area = area;
         this.caminhoPDF = caminhoPDF;
@@ -57,7 +64,10 @@ public class POC {
     }
 
     public void setPalavrasChave(String palavrasChave) {
-        this.palavrasChave = palavrasChave.split(" ");
+        String[] aux = palavrasChave.split(" ");
+        for(String a: aux){
+            this.palavrasChave.add(a);
+        }
     }
 
     public void setTitulo(String titulo) {
@@ -96,8 +106,14 @@ public class POC {
         return coOrientador;
     }
 
-    public String[] getPalavrasChave() {
-        return palavrasChave;
+    public String getPalavrasChave() {
+        String aux = new String();
+        
+        for(String a: this.palavrasChave){
+            aux = aux.concat(a);
+        }
+        aux = aux.replaceAll("-", " ");
+        return aux;
     }
 
     public String getResumo() {
@@ -115,22 +131,20 @@ public class POC {
     public String getUsuarioCadastro(){
         return this.usuarioCadastro;
     }
-    public void printar(){
-        System.out.println(".................................");
-        System.out.println("Titulo: " + this.titulo);
-        System.out.print("Lista de autores: " + getListaDeAutores());
-        System.out.println("\nOrientador: " + this.orientador);
-        System.out.println("Co-orientador: " + this.coOrientador);
-        System.out.println("Data da postagem: " + this.dataPostagem);
-        System.out.print("Palavras chave: ");
-        for (String palavras_chave1 : this.palavrasChave) {
-            System.out.print(palavras_chave1 + " ");
-        }
-        System.out.println("\nResumo: " + this.resumo);
-        System.out.println("Area: " + this.area);
-        System.out.println("Caminho PDF: " + this.caminhoPDF);
-        //System.out.println("Usuário que cadastrou: " + this.usuarioCadastro); //Não necessário printar
-        System.out.println(".................................");
+    
+    @Override
+    public String toString(){
+        return "\n................................." 
+        +"\nTitulo: " + this.titulo 
+        +"\nLista de autores: " + getListaDeAutores() 
+        +"\nOrientador: " + this.orientador 
+        +"\nCo-orientador: " + this.coOrientador 
+        +"\nData da postagem: " + this.dataPostagem 
+        +"\nPalavras chave: " + getPalavrasChave()
+        +"\nResumo: " + this.resumo
+        +"\nArea: " + this.area
+        +"\nCaminho PDF: " + this.caminhoPDF
+        +"\n.................................\n";
         
     }
     
