@@ -111,7 +111,6 @@ public class Queries {
         Connection cn = Conexao.getConexaoMySQL();
         if(!SearchMatriculaAluno(alu.getMatricula())){
             try {
-                System.out.println("><");
                 Statement brdg = cn.createStatement();
                 brdg.executeUpdate( "INSERT INTO aluno(nome, matricula, senha) VALUES('"+alu.getNome()+"',"
                         + "'"+alu.getMatricula()+"','"+alu.getSenha()+"')");

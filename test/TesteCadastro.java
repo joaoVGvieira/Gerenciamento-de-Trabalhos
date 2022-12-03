@@ -21,8 +21,8 @@ public class TesteCadastro {
     
     @Test
     public void teste1(){
-        Aluno a = new Aluno("joao", "EF12345","curso", ALUNO);
-        assertTrue(a.matriculaValida());        
+        Aluno a = new Aluno("", "EF12345","curso", ALUNO);
+        assertFalse(a.matriculaValida());        
     }
     
     @Test

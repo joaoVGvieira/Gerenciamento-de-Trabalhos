@@ -40,7 +40,6 @@ public class AlunoDAO {
         return false;
     }
     public void adicionarAluno(Aluno a){
-        System.out.println("5555555");
         Queries inserealuno = new Queries();
         
         inserealuno.InsertAluno(a);
