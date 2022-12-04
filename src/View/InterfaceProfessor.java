@@ -60,10 +60,10 @@ public class InterfaceProfessor {
         System.out.println("Lista de autores: ");
         String lista_de_autores = s.nextLine();
         System.out.println("Orientador: ");
-        String orientador = s.next();
+        String orientador = s.nextLine();
         s.nextLine();
         System.out.println("Co-orientador: ");
-        String coOrientador = s.next();
+        String coOrientador = s.nextLine();
         s.nextLine();
         System.out.println("Data de postagem(dd/mm/yyyy): ");
         String data_postagem = s.next();
@@ -101,7 +101,7 @@ public class InterfaceProfessor {
             //AUTHOR
             if (acao == 1) {
                 System.out.println("Digite o nome do autor: ");
-                String autores = s.next();
+                String autores = s.nextLine();
                 ArrayList<POC> resultado = Context.pocDAO.pesquisarAutor(autores);
 
                 if(resultado.size() == 0){
@@ -118,7 +118,7 @@ public class InterfaceProfessor {
             //ORIENTADOR
             else if (acao == 2) {
                 System.out.println("Digite o nome do orientador: ");
-                String orientadorr = s.next();
+                String orientadorr = s.nextLine();
                 ArrayList<POC> resultado = Context.pocDAO.pesquisarOrientador(orientadorr);
 
                 if(resultado.size() == 0){
@@ -164,7 +164,7 @@ public class InterfaceProfessor {
             //TITULO
             else if (acao == 5) {
                 System.out.println("Digite o titulo: ");
-                String tituloo = s.next();
+                String tituloo = s.nextLine();
                 ArrayList<POC> resultado = Context.pocDAO.pesquisarTitulo(tituloo);
 
                 if(resultado.size() == 0){
@@ -207,7 +207,7 @@ public class InterfaceProfessor {
     public void editarPOC(){ //TODO
         Scanner s = new Scanner(System.in);
         System.out.println("Digite o Titulo do POC que deseja alterar: ");
-        String tituloAlt = s.next();
+        String tituloAlt = s.nextLine();
         System.out.println("Digite o ano da postagem da POC que deseja alterar: ");
         int ano_postagem = s.nextInt();
 
@@ -240,7 +240,7 @@ public class InterfaceProfessor {
             //AUTHOR
             if (acao == 1) {
                 System.out.println("Digite os novos nomes dos autores: ");
-                String autores = s.next();
+                String autores = s.nextLine();
                 alteracao.setListaDeAutores(autores);
                 System.out.println("Alteração realizada com sucesso");                
             }
@@ -248,28 +248,28 @@ public class InterfaceProfessor {
             //ORIENTADOR
             else if (acao == 2) {
                 System.out.println("Digite o nome do novo orientador: ");
-                String orientador = s.next();
+                String orientador = s.nextLine();
                 alteracao.setOrientador(orientador);
                 System.out.println("Alteração realizada com sucesso");    
             
             //RESUMO
             } else if (acao == 3) {
                 System.out.println("Digite o novo resumo: ");
-                String resumo = s.next();
+                String resumo = s.nextLine();
                 alteracao.setResumo(resumo);
                 System.out.println("Alteração realizada com sucesso");
 
             //AREA  
             } else if (acao == 4) {
                 System.out.println("Digite a nova área da POC: ");
-                String area = s.next();
+                String area = s.nextLine();
                 alteracao.setArea(area);
                 System.out.println("Alteração realizada com sucesso");
             }
             //TITULO
             else if (acao == 5) {
                 System.out.println("Digite o novo titulo da POC: ");
-                String titulo = s.next();
+                String titulo = s.nextLine();
                 alteracao.setTitulo(titulo);
                 System.out.println("Alteração realizada com sucesso");
             }   
@@ -288,7 +288,7 @@ public class InterfaceProfessor {
             //CO-ORIENTADOR
             else if(acao == 7){
                 System.out.println("Digite o novo co-orientador da POC: ");
-                String coorientador = s.next();
+                String coorientador = s.nextLine();
                 alteracao.setCoOrientador(coorientador);
                 System.out.println("Alteração realizada com sucesso");
                 
@@ -296,7 +296,7 @@ public class InterfaceProfessor {
             //PALAVRAS-CHAVE
             else if(acao == 8){
                 System.out.println("Digite as novas palavras-chave da POC: ");
-                String palavrasChave = s.next();
+                String palavrasChave = s.nextLine();
                 alteracao.setPalavrasChave(palavrasChave);
                 System.out.println("Alteração realizada com sucesso");
                 
@@ -325,7 +325,7 @@ public class InterfaceProfessor {
         else{
             Scanner s = new Scanner(System.in);
             System.out.println("Digite o titulo do POC que deseja remover: ");
-            String titulo = s.next();
+            String titulo = s.nextLine();
             Context.pocDAO.removerPOC(titulo);
         }
     }
@@ -350,7 +350,7 @@ public class InterfaceProfessor {
     public Professor cadastrarProfessor(){
         Scanner s = new Scanner(System.in);
         System.out.print("Nome: ");
-        String Nome = s.next();
+        String Nome = s.nextLine();
         System.out.print("Matricula: ");
         String mat = s.next();
         System.out.print("Senha: ");

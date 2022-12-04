@@ -27,7 +27,7 @@ public class TesteCadastro {
     
     @Test
     public void teste2(){
-        Aluno a = new Aluno("nome joao vieira","EV04229","curso", ALUNO);
+        Aluno a = new Aluno("nome joao vieira gonçalves","EV04229","curso", ALUNO);
         assertTrue(a.matriculaValida());        
     }    
     
@@ -41,7 +41,7 @@ public class TesteCadastro {
     
     @Test
     public void teste4(){
-        Professor p = new Professor("nome", "EF12345","curso", PROFESSOR, true);
+        Professor p = new Professor("lucas Andradé louça", "EF12345","curso", PROFESSOR, true);
         assertTrue(p.matriculaValida());        
     }    
     

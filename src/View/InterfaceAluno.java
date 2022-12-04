@@ -49,7 +49,7 @@ public class InterfaceAluno {
     public Aluno cadastrarAluno(){
         Scanner s = new Scanner(System.in);
         System.out.print("Nome: ");
-        String Nome = s.next();
+        String Nome = s.nextLine();
         System.out.print("Matricula: ");
         String mat = s.next();
         System.out.print("Senha: ");
