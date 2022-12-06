@@ -43,6 +43,22 @@ public class POC {
         this.caminhoPDF = caminhoPDF;
         this.usuarioCadastro = usuarioCadastro;
     }
+    
+    public boolean pocValido() {
+
+        try {
+            if ((getTitulo().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getTitulo().length() > 0) && (getDataPostagem() != null) && (getListaDeAutores().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getCaminhoPDF().length() > 0)
+                    && (getListaDeAutores().length() > 0) && (getOrientador().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getCoOrientador().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getPalavrasChave().length() > 0) 
+                    && (getResumo().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getArea().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getUsuarioCadastro().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")))  {
+                return true;
+            }else{
+                throw new IllegalArgumentException("Poc Inválido");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+        return false; 
+    } 
 
     public void setArea(String area) {
         this.area = area;
@@ -81,6 +97,10 @@ public class POC {
 
     public void setCaminhoPDF(String caminhoPDF){
         this.caminhoPDF = caminhoPDF;
+    }
+
+    public String getCaminhoPDF() {
+        return caminhoPDF;
     }
 
     public String getArea() {
