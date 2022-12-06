@@ -4,10 +4,6 @@ package Controller;
 
 import DAO.Context;
 import Model.Aluno;
-import Model.Professor;
-import Model.TipoUsuario;
-import Model.Usuario;
-import java.util.regex.*;
 
 /**
  *String nome, String usuario, String senha, int matricula, TipoUsuario tipo

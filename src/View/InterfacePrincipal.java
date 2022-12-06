@@ -1,13 +1,6 @@
 package View;
 
-import DAO.AlunoDAO;
 import DAO.Context;
-import Model.Aluno;
-import Model.POC;
-import Model.Professor;
-import Model.TipoUsuario;
-import static java.lang.System.in;
-import java.util.Scanner;
 
 /**
  *

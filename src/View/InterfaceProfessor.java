@@ -4,7 +4,6 @@ package View;
 //TODO interface que aparecera para o professor 
 
 import DAO.Context;
-import Model.Aluno;
 import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;

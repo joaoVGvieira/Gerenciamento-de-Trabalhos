@@ -2,9 +2,6 @@ package Controller;
 
 import DAO.Context;
 import Model.Professor;
-import Model.TipoUsuario;
-import Model.Usuario;
-import java.util.regex.*;
 
 /**
  *

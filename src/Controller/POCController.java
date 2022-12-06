@@ -3,9 +3,6 @@ package Controller;
 
 import DAO.Context;
 import Model.POC;
-import Model.TipoUsuario;
-import Model.Usuario;
-import Model.Aluno;
 
 
 /**
