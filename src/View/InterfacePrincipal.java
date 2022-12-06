@@ -65,7 +65,11 @@ public class InterfacePrincipal {
                         }while(acao!=3);
                         
                     } else {
-                        System.out.println("Aluno não cadastrado.");
+                        try {
+                            throw new Exception("Login e/ou senha incorretos");
+                        } catch (Exception e) {
+                            System.out.println("Erro: " + e.getMessage());
+                        }
                     }
                 }
                 //PROFESSOR 
@@ -102,7 +106,11 @@ public class InterfacePrincipal {
                         }while(acao!=5);
                     }    
                     else {
-                        System.out.println("Professor não cadastrado.");
+                        try {
+                            throw new Exception("Login e/ou senha incorretos");
+                        } catch (Exception e) {
+                            System.out.println("Erro: " + e.getMessage());
+                        }
                     }
                 }    
                 //VOLTAR

@@ -33,10 +33,5 @@ public class Professor extends Usuario{
         return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n" + "Não é administrador";
     }
     
-    @Override
-    public boolean matriculaValida() {
-        return (Pattern.matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$", getNome()) && getNome().length() !=0 && (getMatricula().matches("E[F|V]\\d\\d\\d\\d\\d")) 
-            && (getTipo().equals(TipoUsuario.PROFESSOR)));
-    }
-   
+    
 }

@@ -20,10 +20,5 @@ public class Aluno extends Usuario{
         return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n";
     }
 
-    @Override
-    public boolean matriculaValida() {
-        return ((getNome().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && getNome().length() !=0 && (getMatricula().matches("E[F|V]\\d\\d\\d\\d\\d")) 
-            && (getTipo().equals(TipoUsuario.ALUNO)));
-    }    
     
 }

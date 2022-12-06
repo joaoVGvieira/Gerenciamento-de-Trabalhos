@@ -15,8 +15,6 @@ public class GetPoc {
 
     public static void main(String[] args) {
         InterfacePrincipal i = new InterfacePrincipal();
-        
-        
         Aluno b = new Aluno("Cleidimar", "EF03473","passos", TipoUsuario.ALUNO);
         Context.alunoDAO.adicionarAluno(b);
 
