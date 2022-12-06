@@ -49,7 +49,7 @@ public class POC {
         try {
             if ((getTitulo().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getTitulo().length() > 0) && (getDataPostagem() != null) && (getListaDeAutores().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getCaminhoPDF().length() > 0)
                     && (getListaDeAutores().length() > 0) && (getOrientador().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getCoOrientador().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getPalavrasChave().length() > 0) 
-                    && (getResumo().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getArea().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getUsuarioCadastro().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")))  {
+                    && (getResumo().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getArea().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$")) && (getUsuarioCadastro() != null))  {
                 return true;
             }else{
                 throw new IllegalArgumentException("Poc Inválido");

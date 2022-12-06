@@ -59,11 +59,9 @@ public class InterfaceProfessor {
         System.out.println("Lista de autores: ");
         String lista_de_autores = s.nextLine();
         System.out.println("Orientador: ");
-        String orientador = s.nextLine();
-        s.nextLine();
+        String orientador = s.next();
         System.out.println("Co-orientador: ");
-        String coOrientador = s.nextLine();
-        s.nextLine();
+        String coOrientador = s.next();
         System.out.println("Data de postagem(dd/mm/yyyy): ");
         String data_postagem = s.next();
         s.nextLine();
