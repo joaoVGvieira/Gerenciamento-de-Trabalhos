@@ -21,7 +21,7 @@ public class TesteCadastro {
     
     @Test
     public void teste1(){
-        Aluno a = new Aluno("", "EF12345","curso", ALUNO);
+        Aluno a = new Aluno("", "EF15345","curso", ALUNO);
         assertFalse(a.matriculaValida());        
     }
     
@@ -41,13 +41,13 @@ public class TesteCadastro {
     
     @Test
     public void teste4(){
-        Professor p = new Professor("lucas Andradé louça", "EF12345","curso", PROFESSOR, true);
+        Professor p = new Professor("lucas Andradé louça", "EF11345","curso", PROFESSOR, true);
         assertTrue(p.matriculaValida());        
     }    
     
     @Test
     public void teste5(){
-        Professor p = new Professor("nome", "EF12345","curso", PROFESSOR, true);
+        Professor p = new Professor("nome", "EF22345","curso", PROFESSOR, true);
         assertTrue(p.matriculaValida());        
     }
     
@@ -56,4 +56,10 @@ public class TesteCadastro {
         Professor p = new Professor("nome", "12345","curso", ALUNO, true);
         assertFalse(p.matriculaValida());        
     } 
+    
+    @Test 
+    public void teste7(){
+        Aluno a = new Aluno("luís cardoso", "EF09876", "senha", ALUNO);
+        assertTrue(a.matriculaValida());
+    }
 }

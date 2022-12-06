@@ -17,6 +17,8 @@ public abstract class Usuario {
         this.tipo = tipo;
     }
     
+    public abstract boolean matriculaValida();
+    
     public String getNome() {
         return nome;
     }
@@ -48,21 +50,5 @@ public abstract class Usuario {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
-
-    public boolean matriculaValida() {
-        
-        try {
-            if (getNome().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$") && getNome().length() != 0 && (getMatricula().matches("E[F|V]\\d\\d\\d\\d\\d")) && (getTipo().equals(TipoUsuario.ALUNO))) {
-                return true;
-            }else{
-                throw new IllegalArgumentException("Matricula invalida");
-            }
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
-        return false; 
-    }    
-        
-    
+      
 }

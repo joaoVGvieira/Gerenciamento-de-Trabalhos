@@ -13,7 +13,20 @@ public class Aluno extends Usuario{
         super(nome, matricula, senha, tipo);
     }
 
+    @Override
+    public boolean matriculaValida() {
 
+        try {
+            if (getNome().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$") && getNome().length() != 0 && (getMatricula().matches("E[F|V]\\d\\d\\d\\d\\d")) && (getTipo().equals(TipoUsuario.ALUNO))) {
+                return true;
+            }else{
+                throw new IllegalArgumentException("Matricula invalida");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+        return false; 
+    } 
     
     @Override
     public String toString(){        

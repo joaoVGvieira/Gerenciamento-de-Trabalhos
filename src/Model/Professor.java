@@ -26,6 +26,22 @@ public class Professor extends Usuario{
     }
     
     @Override
+    public boolean matriculaValida() {
+
+        try {
+            if (getNome().matches("^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ \\s]*$") && getNome().length() != 0 && (getMatricula().matches("E[F|V]\\d\\d\\d\\d\\d")) && (getTipo().equals(TipoUsuario.PROFESSOR))) {
+                return true;
+            }else{
+                throw new IllegalArgumentException("Matricula invalida");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+        return false; 
+    } 
+    
+    
+    @Override
     public String toString(){  
         if(isAdm){
             return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n" + "É admininistrador\n";
