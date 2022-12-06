@@ -122,6 +122,8 @@ public class POCDAO {
 
     public void removerPOC(String titulo){
         ArrayList<POC> resultado = pesquisarTitulo(titulo);
+        Queries deletepoc = new Queries();
+        boolean res;
         if(resultado.size() == 0){
             System.out.println("Nenhum resultado encontrado");
         }
@@ -130,6 +132,12 @@ public class POCDAO {
                 System.out.println("Removendo POC: ");
                 System.out.println(p);
                 pocs.remove(p);
+                res = deletepoc.Deletepoc(p.getTitulo());
+                if(res){
+                    System.out.println("ok");
+                }else{
+                    System.out.println("bug");
+                }
             }
        }
         
