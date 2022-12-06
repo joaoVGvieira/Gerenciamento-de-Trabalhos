@@ -29,10 +29,15 @@ public class InterfaceAluno {
     }
     
     public int lerOpcao(){
-         int opcao;
-         Scanner s = new Scanner(System.in);
-         opcao = s.nextInt();
-         return opcao;
+        int opcao;
+        Scanner s = new Scanner(System.in);
+        try{
+           opcao = s.nextInt();
+        }catch(Exception e){
+            System.out.println("Digite uma opção válida!");
+            opcao = lerOpcao();
+        }
+        return opcao;
     }
     
     public Aluno lerLoginAluno(){

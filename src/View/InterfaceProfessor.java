@@ -342,7 +342,12 @@ public class InterfaceProfessor {
     public int lerOpcao(){
         int opcao;
         Scanner s = new Scanner(System.in);
-        opcao = s.nextInt();
+        try{
+           opcao = s.nextInt();
+        }catch(Exception e){
+            System.out.println("Digite uma opção válida!");
+            opcao = lerOpcao();
+        }
         return opcao;
     }
     
