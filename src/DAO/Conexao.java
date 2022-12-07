@@ -45,7 +45,7 @@ Class.forName(driverName);
 
         String serverName = "localhost";    //caminho do servidor do BD
 
-        String mydatabase ="get-poc";        //nome do seu banco de dados
+        String mydatabase ="get_poc";        //nome do seu banco de dados
 
         String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 
