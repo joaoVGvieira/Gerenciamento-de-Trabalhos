@@ -71,9 +71,9 @@ public class TesteCadastro {
     
     @Test
     public void teste9(){
-        POC p = new POC("132u848438487434432", "joao firmino silvio", "marcelo", "mirela", 
+        POC p = new POC("132 formas", "joao firmino silvio", "marcelo", "mirela", 
                 LocalDate.of(2022, Month.MARCH, 22), "corda sonho", "dfsadfdsa sdfsadf", "computação", "www.www.www", "joao");
-        assertFalse(p.pocValido());
+        assertTrue(p.pocValido());
     }
     
     @Test
@@ -94,7 +94,7 @@ public class TesteCadastro {
     public void teste12(){
         POC p = new POC("Meu Póc", "tabata ronaldo Ricardo", "marcelo", "mirela", 
                 LocalDate.of(2022, Month.MARCH, 22), "corda sonho", "45455346543", "computação", "www.www.www", "joao");
-        assertFalse(p.pocValido());
+        assertTrue(p.pocValido());
     }
     
     @Test

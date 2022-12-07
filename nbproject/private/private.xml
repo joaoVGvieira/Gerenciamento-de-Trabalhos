@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/getATT/Gerenciamento-de-Trabalhos/src/Controller/AlunoController.java</file>
-            <file>file:/D:/getATT/Gerenciamento-de-Trabalhos/src/Controller/POCController.java</file>
-            <file>file:/D:/getATT/Gerenciamento-de-Trabalhos/test/TesteCadastro.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/Controller/POCController.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/Model/Professor.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/Controller/AlunoController.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/View/InterfaceProfessor.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/Model/POC.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/Model/Aluno.java</file>
+            <file>file:/D:/GETGET/Gerenciamento-de-Trabalhos/src/DAO/AlunoDAO.java</file>
         </group>
     </open-files>
 </project-private>
