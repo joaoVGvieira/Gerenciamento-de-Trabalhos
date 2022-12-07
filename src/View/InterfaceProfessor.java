@@ -395,7 +395,7 @@ public class InterfaceProfessor {
         Scanner s = new Scanner(System.in);
         int opc,acao;
         do {
-            System.out.println("DESEJA ALTERAR DADOS DO 1.ALUNO | 2.PROFESSOR | 0.Sair");
+            System.out.println("DESEJA ALTERAR DADOS DO 1.ALUNO | 2.PROFESSOR | 0.SAIR");
             opc = s.nextInt();
             if(opc==1){
                 System.out.println("Digite a Matricula do Aluno que deseja alterar: ");
