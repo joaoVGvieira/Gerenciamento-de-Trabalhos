@@ -4,6 +4,7 @@ package View;
 //TODO interface que aparecera para o professor 
 
 import DAO.Context;
+import DAO.Queries;
 import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
@@ -202,6 +203,8 @@ public class InterfaceProfessor {
     
     
     public void editarPOC(){ //TODO
+        Queries update = new Queries();
+        String tituloatual = "";
         Scanner s = new Scanner(System.in);
         System.out.println("Digite o Titulo do POC que deseja alterar: ");
         String tituloAlt = s.nextLine();
@@ -220,6 +223,8 @@ public class InterfaceProfessor {
                     System.out.println(p1);
                     alteracao = p1;
                     encontrada = 1;
+                    
+                    tituloatual=p1.getTitulo();
                 }
                 
             }
@@ -239,6 +244,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite os novos nomes dos autores: ");
                 String autores = s.nextLine();
                 alteracao.setListaDeAutores(autores);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");                
             }
 
@@ -247,6 +254,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite o nome do novo orientador: ");
                 String orientador = s.nextLine();
                 alteracao.setOrientador(orientador);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");    
             
             //RESUMO
@@ -254,6 +263,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite o novo resumo: ");
                 String resumo = s.nextLine();
                 alteracao.setResumo(resumo);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
 
             //AREA  
@@ -261,6 +272,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite a nova área da POC: ");
                 String area = s.nextLine();
                 alteracao.setArea(area);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
             }
             //TITULO
@@ -268,6 +281,7 @@ public class InterfaceProfessor {
                 System.out.println("Digite o novo titulo da POC: ");
                 String titulo = s.nextLine();
                 alteracao.setTitulo(titulo);
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
             }   
             //ANO
@@ -280,6 +294,8 @@ public class InterfaceProfessor {
                 int ano = Integer.parseInt(novaData.substring(6, 10));
                 LocalDate dataNova = LocalDate.of(ano, mes, dia);
                 alteracao.setDataPostagem(dataNova);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
             }
             //CO-ORIENTADOR
@@ -287,6 +303,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite o novo co-orientador da POC: ");
                 String coorientador = s.nextLine();
                 alteracao.setCoOrientador(coorientador);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
                 
             }
@@ -295,6 +313,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite as novas palavras-chave da POC: ");
                 String palavrasChave = s.nextLine();
                 alteracao.setPalavrasChave(palavrasChave);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
                 
             }
@@ -303,6 +323,8 @@ public class InterfaceProfessor {
                 System.out.println("Digite o novo caminho do PDF da POC: ");
                 String caminhoPDF = s.next();
                 alteracao.setCaminhoPDF(caminhoPDF);
+                
+                update.updatePoc(tituloatual, alteracao);
                 System.out.println("Alteração realizada com sucesso");
                 
             }

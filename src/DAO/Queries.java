@@ -251,6 +251,25 @@ public class Queries {
         
         return false;
     }
+        public boolean updatePoc(String titulo, POC alt){
+        Connection cn = Conexao.getConexaoMySQL();
+        
+        try {
+            Statement brdg = cn.createStatement();
+            
+            brdg.executeUpdate( "UPDATE `poc` SET `titulo`='"+alt.getTitulo()+"',"
+                    + "`lista_autores`='"+alt.getListaDeAutores()+"',`orientador`='"+alt.getOrientador()+"',"
+                    + "`coorientador`='"+alt.getCoOrientador()+"',"
+                    + "`data_postagem`='"+Date.valueOf(alt.getDataPostagem())+"',`palavras_chave`='"+String.join("-", alt.getPalavrasChave())+"',"
+                    + "`resumo`='"+alt.getResumo()+"',`area`='"+alt.getArea()+"',`caminho_PDF`='"+alt.getCaminhoPDF()+"' WHERE titulo = '"+titulo+"'");
+            brdg.close();
+            return true;
+            } catch (SQLException ex) {
+                Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
 }
 
     
