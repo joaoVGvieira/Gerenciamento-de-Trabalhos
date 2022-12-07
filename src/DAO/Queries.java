@@ -251,7 +251,8 @@ public class Queries {
         
         return false;
     }
-        public boolean updatePoc(String titulo, POC alt){
+    
+    public boolean updatePoc(String titulo, POC alt){
         Connection cn = Conexao.getConexaoMySQL();
         
         try {
@@ -262,6 +263,40 @@ public class Queries {
                     + "`coorientador`='"+alt.getCoOrientador()+"',"
                     + "`data_postagem`='"+Date.valueOf(alt.getDataPostagem())+"',`palavras_chave`='"+String.join("-", alt.getPalavrasChave())+"',"
                     + "`resumo`='"+alt.getResumo()+"',`area`='"+alt.getArea()+"',`caminho_PDF`='"+alt.getCaminhoPDF()+"' WHERE titulo = '"+titulo+"'");
+            brdg.close();
+            return true;
+            } catch (SQLException ex) {
+                Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
+    
+    public boolean updateProfessor(String matricula, Professor prf){
+        Connection cn = Conexao.getConexaoMySQL();
+        
+        try {
+            Statement brdg = cn.createStatement();
+            
+            brdg.executeUpdate( "UPDATE `professor` SET `nome`= '"+prf.getNome()+"',"
+                    + " `senha`='"+prf.getSenha()+"', `e_ADM`='"+prf.isAdm()+"' WHERE matricula="+matricula+"");
+            brdg.close();
+            return true;
+            } catch (SQLException ex) {
+                Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
+    
+    public boolean updateAluno(String matricula, Aluno prf){
+        Connection cn = Conexao.getConexaoMySQL();
+        
+        try {
+            Statement brdg = cn.createStatement();
+            
+            brdg.executeUpdate( "UPDATE `aluno` SET nome= '"+prf.getNome()+"',"
+                    + ", senha='"+prf.getSenha()+"' WHERE matricula="+matricula+"");
             brdg.close();
             return true;
             } catch (SQLException ex) {

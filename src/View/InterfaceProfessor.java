@@ -392,6 +392,7 @@ public class InterfaceProfessor {
     }
     
     public void editarUsuarios(){ //TODO
+        Queries altusr = new Queries();
         Scanner s = new Scanner(System.in);
         int opc,acao;
         do {
@@ -415,6 +416,8 @@ public class InterfaceProfessor {
                         System.out.println("Digite o novo nome: ");
                         String nome = s.next();
                         alteracao.setNome(nome);
+                        
+                        altusr.updateAluno(al.getMatricula(), alteracao);
                         System.out.println("Alteração realizada com sucesso");                
                     }
                     //SENHA
@@ -422,6 +425,8 @@ public class InterfaceProfessor {
                         System.out.println("Digite a nova senha: ");
                         String senha = s.next();
                         alteracao.setSenha(senha);
+                        
+                        altusr.updateAluno(al.getMatricula(), alteracao);
                         System.out.println("Alteração realizada com sucesso");   
                     }
                     else if(acao == 0){
@@ -450,6 +455,8 @@ public class InterfaceProfessor {
                         System.out.println("Digite o novo nome: ");
                         String nome = s.next();
                         alteracao.setNome(nome);
+                        
+                        altusr.updateProfessor(al.getMatricula(), alteracao);
                         System.out.println("Alteração realizada com sucesso");                
                     }
                     //SENHA
@@ -457,6 +464,8 @@ public class InterfaceProfessor {
                         System.out.println("Digite a nova senha: ");
                         String senha = s.next();
                         alteracao.setSenha(senha);
+                        
+                        altusr.updateProfessor(al.getMatricula(), alteracao);
                         System.out.println("Alteração realizada com sucesso");   
                     }
                     else if(acao == 0){
