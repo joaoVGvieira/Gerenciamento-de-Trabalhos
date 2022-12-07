@@ -51,4 +51,13 @@ public class ProfessorDAO {
     public ArrayList<Professor> listarProfessores(){
         return this.professores;
     }
+    
+     public Professor buscarMatProfessor(String a){
+        for(Professor p1 : professores){
+            if(p1.getMatricula().equals(a))
+                return p1;
+            }
+            return null;
+    }
+
 }
