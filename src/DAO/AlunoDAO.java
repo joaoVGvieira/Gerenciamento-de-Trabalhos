@@ -62,4 +62,13 @@ public class AlunoDAO {
         }
         return null;
     }
+    
+     public Aluno buscarMatAluno(String a){
+        for(Aluno a1 : alunos){
+            if(a1.getMatricula().equals(a))
+                return a1;
+            }
+            return null;
+    }
+
 }
