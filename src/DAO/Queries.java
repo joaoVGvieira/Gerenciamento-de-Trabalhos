@@ -1,7 +1,19 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+--- UFV - Ciência da Computação ---
+Disciplina{ 
+    CCF 313 - Programação Orientada a Objetos
+    }	
+Professor{ 
+    Fabrício Silva
+    }
+Alunos{
+    Cleidimar L. dos Passos - [EF03473]
+    João Vitor G. Vieira - [EF04212]
+    Juan Pablo A. Avelar - [EF04229]
+    Leonardo Araujo R. Aguiar - [EF04702]
+    Vinicius Augusto A. Ferreira -  [EF04242]
+    }
+*/
 package DAO;
 import java.sql.Connection;
 import java.sql.ResultSet;
