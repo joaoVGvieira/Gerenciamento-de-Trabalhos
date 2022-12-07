@@ -69,9 +69,8 @@ public class InterfacePrincipal {
                 else if (opcao == 2) {
                     Context.professorLogado = Context.professorController.logar(Ip.lerLoginProfessor());
                     if (Context.professorLogado != null) {
-                        do{
                             if(Context.professorLogado.isAdm()){
-                                 do {
+                                do {
                                     Ip.mostrarOpcaoProfessorAdmintrador();
                                     acao = Ip.lerOpcao();
                                     //CADASTRAR POC
@@ -95,11 +94,17 @@ public class InterfacePrincipal {
                                            Ip.editarUsuarios();
                                        }//VOLTAR
                                        else if(acao == 6){
-                                           break;
-                                       }
+                                          
+                                       }//VOLTAR
+                                        
+                                        else{
+                                            System.out.println("opcao invalida!!!");
+                                        }
                                 } while (acao!=6);
+                                    
                             }else{
-                                Ip.mostrarOpcaoProfessor();
+                                do {
+                                    Ip.mostrarOpcaoProfessor();
                                 acao = Ip.lerOpcao();
                                //CADASTRAR POC
                                if (acao == 1) {
@@ -123,10 +128,10 @@ public class InterfacePrincipal {
                                }
                                else{
                                    System.out.println("opcao invalida!!!");
-                               }
+                               } 
+                                } while (acao!=5);                              
                             }
-                        }while(acao!=5);
-                    }    
+                    }
                     else {
                         try {
                             throw new Exception("Login e/ou senha incorretos");
