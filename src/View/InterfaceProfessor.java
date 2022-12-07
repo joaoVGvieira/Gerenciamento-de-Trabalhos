@@ -5,6 +5,7 @@ package View;
 
 import DAO.Context;
 import DAO.Queries;
+import Model.Aluno;
 import Model.POC;
 import Model.Professor;
 import Model.TipoUsuario;
@@ -389,4 +390,105 @@ public class InterfaceProfessor {
         return b;
         
     }
+    
+    public void editarUsuarios(){ //TODO
+        Scanner s = new Scanner(System.in);
+        int opc,acao;
+        do {
+            System.out.println("DESEJA ALTERAR DADOS DO 1.ALUNO | 2.PROFESSOR | 0.Sair");
+            opc = s.nextInt();
+            if(opc==1){
+                System.out.println("Digite a Matricula do Aluno que deseja alterar: ");
+                String matAlt = s.next();
+                Aluno alteracao = null;
+                Aluno al = Context.alunoDAO.buscarMatAluno(matAlt);
+                alteracao = al;
+                if(al == null){
+                    System.out.println("Aluno não encontrado");
+                    return;
+                }
+                    this.mostrarOpcaoADM();
+                    acao = this.lerOpcao();
+                    //NOME
+
+                    if (acao == 1) {
+                        System.out.println("Digite o novo nome: ");
+                        String nome = s.next();
+                        alteracao.setNome(nome);
+                        System.out.println("Alteração realizada com sucesso");                
+                    }
+                    //SENHA
+                    else if (acao == 2) {
+                        System.out.println("Digite a nova senha: ");
+                        String senha = s.next();
+                        alteracao.setSenha(senha);
+                        System.out.println("Alteração realizada com sucesso");   
+                    }
+                    else if(acao == 0){
+                         break;
+                    }
+                    else {
+                        System.out.println("Opcao Invalida!!!");
+                    }
+            }
+            if (opc == 2) {
+                System.out.println("Digite a Matricula do Professor que deseja alterar: ");
+                String matAlt = s.next();
+                Professor alteracao = null;
+                Professor al = Context.professorDAO.buscarMatProfessor(matAlt);
+                alteracao = al;
+                if(al == null){
+                    System.out.println("Professor não encontrado");
+                    return;
+                }
+                
+                    this.mostrarOpcaoADM();
+                    acao = this.lerOpcao();
+                    //NOME
+
+                    if (acao == 1) {
+                        System.out.println("Digite o novo nome: ");
+                        String nome = s.next();
+                        alteracao.setNome(nome);
+                        System.out.println("Alteração realizada com sucesso");                
+                    }
+                    //SENHA
+                    else if (acao == 2) {
+                        System.out.println("Digite a nova senha: ");
+                        String senha = s.next();
+                        alteracao.setSenha(senha);
+                        System.out.println("Alteração realizada com sucesso");   
+                    }
+                    else if(acao == 0){
+                         System.out.println("");
+                         break;
+                    }
+                    else {
+                        System.out.println("Opcao Invalida!!!");
+                    }
+         
+            }
+        } while (opc!=0);
+    }
+
+        public void mostrarOpcaoADM(){
+        System.out.println("----- Opcoes de alteraçoes -----");
+        System.out.println("1- Editar Nome");
+        System.out.println("2- Edita Senha");
+        System.out.println("0- Voltar");
+        System.out.println("-------------------------------");
+    }
+    
+     public void mostrarOpcaoProfessorAdmintrador(){
+        System.out.println("----- Opcoes do Professor ADM -----");
+        System.out.println("1- Cadastrar POC");
+        System.out.println("2- Pesquisar POC");
+        System.out.println("3- Editar POC");
+        System.out.println("4- Remover POC");
+        System.out.println("5- Editar Usuario");
+        System.out.println("6- Voltar");
+        System.out.println("-------------------------------");
+    }
+
+
 }
