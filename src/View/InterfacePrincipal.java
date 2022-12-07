@@ -70,32 +70,61 @@ public class InterfacePrincipal {
                     Context.professorLogado = Context.professorController.logar(Ip.lerLoginProfessor());
                     if (Context.professorLogado != null) {
                         do{
-                            Ip.mostrarOpcaoProfessor();
-                             acao = Ip.lerOpcao();
-                            //CADASTRAR POC
-                            if (acao == 1) {
-                                Ip.cadastrarPOC();
+                            if(Context.professorLogado.isAdm()){
+                                 do {
+                                    Ip.mostrarOpcaoProfessorAdmintrador();
+                                    acao = Ip.lerOpcao();
+                                    //CADASTRAR POC
+                                       if (acao == 1) {
+                                           Ip.cadastrarPOC();
+                                       }
+                                       //PESQUISAR POC
+                                       else if(acao == 2){
+                                           Ip.pesquisarPOC();
+                                       }
+                                       //EDITAR POC
+                                       else if(acao == 3){
+                                           Ip.editarPOC();
+                                       }
+                                       //REMOVER POC
+                                       else if(acao==4){
+                                           Ip.removerPOC();
+                                       }
+                                       //EDITAR USUARIO
+                                       else if(acao == 5){
+                                           Ip.editarUsuarios();
+                                       }//VOLTAR
+                                       else if(acao == 6){
+                                           break;
+                                       }
+                                } while (acao!=6);
+                            }else{
+                                Ip.mostrarOpcaoProfessor();
+                                acao = Ip.lerOpcao();
+                               //CADASTRAR POC
+                               if (acao == 1) {
+                                   Ip.cadastrarPOC();
+                               }
+                               //PESQUISAR POC
+                               else if(acao == 2){
+                                   Ip.pesquisarPOC();
+                               }
+                               //EDITAR POC
+                               else if(acao == 3){
+                                   Ip.editarPOC();
+                               }
+                               //REMOVER POC
+                               else if(acao==4){
+                                   Ip.removerPOC();
+                               }
+                               //VOLTAR
+                               else if(acao == 5){
+                                   break;
+                               }
+                               else{
+                                   System.out.println("opcao invalida!!!");
+                               }
                             }
-                            //PESQUISAR POC
-                            else if(acao == 2){
-                                Ip.pesquisarPOC();
-                            }
-                            //EDITAR POC
-                            else if(acao == 3){
-                                Ip.editarPOC();
-                            }
-                            //REMOVER POC
-                            else if(acao==4){
-                                Ip.removerPOC();
-                            }
-                            //VOLTAR
-                            else if(acao == 5){
-                                break;
-                            }
-                            else{
-                                System.out.println("opcao invalida!!!");
-                            }
-                            
                         }while(acao!=5);
                     }    
                     else {
