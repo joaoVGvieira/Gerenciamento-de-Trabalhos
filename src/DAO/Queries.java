@@ -308,7 +308,7 @@ public class Queries {
             Statement brdg = cn.createStatement();
             
             brdg.executeUpdate( "UPDATE `aluno` SET nome= '"+prf.getNome()+"',"
-                    + ", senha='"+prf.getSenha()+"' WHERE matricula='"+matricula+"'");
+                    + " senha='"+prf.getSenha()+"' WHERE matricula='"+matricula+"'");
             brdg.close();
             return true;
             } catch (SQLException ex) {
