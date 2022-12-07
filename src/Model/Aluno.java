@@ -28,7 +28,7 @@ public class Aluno extends Usuario{
     
     @Override
     public String toString(){        
-        return "Nome " + getNome()+ "\n" + "Matricula " + getMatricula() + "\n" + "Tipo " + getTipo().string + "\n";
+        return "Nome " + this.getNome() + "\n" + "Matricula " + this.getMatricula() + "\n" + "Tipo " + getTipo().string + "\n";
     }
 
     
